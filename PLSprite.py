@@ -38,7 +38,7 @@ class GerarSpriteSheet:
     img6 = pygame.image.load('imagem/img6.png')
     
     matriz_sprite = [[img1, img2, img3],
-    									 [img4, img5, img6]] # criando matriz de sprites
+                     [img4, img5, img6]] # criando matriz de sprites
     
     meu_sprite = GerarSpriteSheet(matriz_sprite, 
                                   (100, 100),
