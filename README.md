@@ -57,4 +57,5 @@ while run:
   janela.display.flip() # após cada loop atualiza a janela
   
 ```
-*Isso fará com que seu sprite seja exibido no centro da janela
+*Isso fará com que seu sprite seja exibido no centro da janela*
+OBS.: Este exemplo de código está (aqui)[https://github.com/Pyluuu/PLSprite/tests/
