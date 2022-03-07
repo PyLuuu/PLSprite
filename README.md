@@ -59,4 +59,5 @@ while run:
 ```
 *Isso fará com que seu sprite seja exibido no centro da janela*
 
-OBS.: Este exemplo de código está (aqui)[https://github.com/PyLuuu/PLSprite/blob/main/testes/construindo_avatar.py]
+OBS.: Este exemplo de código está (aqui): [https://github.com/PyLuuu/PLSprite/blob/main/testes/construindo_avatar.py]
+[aqui]: <
