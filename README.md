@@ -19,12 +19,15 @@ funcionalidades, você pode clonar o repositório com a seguinte linha de comand
 diretório que deseja clonar o repositório.
 
 ## Como usar
-Importações necessárias:
+**Importações necessárias:**
 
 ```Python
 import PLSprite as PLS
 import pygame as pg
+```
 
+**Exemplo de uso:**
+```Python
 pg.init() # Inicializando o Pygame
 largura = altura = 500 # dimensoes da janela
 janela = pg.display.set_mode((largura, altura)) # criando janela
@@ -41,15 +44,16 @@ adao = Avatar(janela,
               60,
               60,
               animacao_h=True,
-              )
+              num_animacao_h=9)
 
 while run:
   for event in pg.event.get(): # verificando lista de eventos do Pygame
     if event.type == pg.QUIT: # ao clicar para fechar a janela o event.type sera QUIT
       run = False # estado do programa recebe False
+  
   tela.fill((0, 0, 0)) # apos cada loop preenche a tela com a cor RGB 0, 0, 0, ou seja, preto
+  adao.atualizar() # fará com que o seu sprite seja desenhado na janela
   
   janela.display.flip() # apos cada loop atualiza a superficie
   
 ```
-https://www.youtube.com/embed/7IFZnyQhgfU?start=8127
