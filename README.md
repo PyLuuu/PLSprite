@@ -68,5 +68,5 @@ diversas ferramentas de manipulação.
 Como a classe <code>Avatar()</code>, que é responsável por tratar de spritesheets AHLV, <br/>
 Animações na Horizontal e Lados na Vertical.
 
-**Exemplo de AHLV:**
+**Exemplo de spritesheet AHLV:**
 
