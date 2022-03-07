@@ -1,6 +1,6 @@
 # PLSprite
 
-|Python3|
+![] https;//img.shields.io/badge/Python-3-black
 
 Este projeto foi desenvolvido no propósito de facilitar a manipulação<br/>
 de spritesheets para games 2D com uso da biblioteca <a href="https://pygame.org">Pygame</a>
