@@ -65,11 +65,28 @@ OBS.: Este exemplo de código está <a href="https://github.com/PyLuuu/PLSprite/
 O nosso projeto tem como base ajudar a facilitar a maniuplação de spritesheets disponibilizando<br/>
 diversas ferramentas de manipulação.
 
-Como a classe <code>Avatar()</code>, que é responsável por tratar de spritesheets AHLV, <br/>
-Animações na Horizontal e Lados na Vertical.
+Como a classe <code>Avatar()</code>, que é responsável por tratar de spritesheets <code>AHLV</code>, <code>AHLH</code>, <code>AVLH</code> e <br/><code>AVLV</code>(não disponível ainda),
+
+<code>AHLV</code>: Animação na Horizontal e Lados na Vertical<br/>
+<code>AHLH</code>: Animação na Horizontal e Lados na Horizontal<br/>
+<code>AVLH</code>: Animação na Vertical e Lados na Horizontal<br/>
+<code>AVLV</code>: Animação na Vertical e Lados na Vertical<br/>
+
 
 **Exemplo de spritesheet AHLV:**
 
-![Imagem Animação na Horizontal e Lados na Vertical(AHLV)](testes/imagens/adao_andando.png)
+![Imagem AHLV](testes/imagens/adao_andando.png)
 
-Com a mesma classe <code>Avatar()</code> passando o parâmetro <code>animacao_h</code>
+
+**Exemplo de spritesheet AHLH:**
+
+![Imagem AHLH](testes/imagens/primo_mario_andando.png)
+
+
+**Exemplo de spritesheet AVLH:**
+
+![Imagem AVLH](testes/imagens/nora_andando.png)
+
+**Exemplo de spritesheet AVLV:** (não disponível ainda)
+
+*Para mais detalhes de como usar estes tipos de spritesheets olhe o diretório de <code>testes</code>*
