@@ -18,13 +18,43 @@ funcionalidades, você pode clonar o repositório com a seguinte linha de comand
 <code>git clone https://github.com/Pyluuu/PLSprite</code>, use este comando dentro do <br/>
 diretório que deseja clonar o repositório.
 
-## Como usar
-**Importações necessárias:**
+### Benefícios
+O nosso projeto tem como base ajudar a facilitar a maniuplação de spritesheets disponibilizando<br/>
+diversas ferramentas de manipulação para os usuários.
 
+Como a classe <code>Avatar()</code>, que é responsável por tratar de spritesheets <code>AHLV</code>, <code>AHLH</code>, <code>AVLH</code> e <br/><code>AVLV</code>(não disponível ainda).
+
+<code>AHLV</code>: Animação na Horizontal e Lados na Vertical<br/>
+<code>AHLH</code>: Animação na Horizontal e Lados na Horizontal<br/>
+<code>AVLH</code>: Animação na Vertical e Lados na Horizontal<br/>
+<code>AVLV</code>: Animação na Vertical e Lados na Vertical<br/>
+
+**Exemplo de spritesheet** <code>AHLV</code>:
+
+![Imagem AHLV](testes/imagens/adao_andando.png)
+
+
+**Exemplo de spritesheet** <code>AHLH</code>:
+
+![Imagem AHLH](testes/imagens/primo_mario_andando.png)
+
+
+**Exemplo de spritesheet** <code>AVLH</code>:
+
+![Imagem AVLH](testes/imagens/nora_andando.png)
+
+
+**Exemplo de spritesheet** <code>AVLV</code>: (não disponível ainda)
+
+## Como usar
+
+### Importação
 ```Python
 import PLSprite as PLS
 import pygame as pg
 ```
+*Importar a biblioteca Pygame e o nosso projeto, PLSprite, para que possamos começar a trabalhar.*
+*Após a importação da biblioteca Pygame e do nosso projeto vamos construir um avatar*
 
 **Exemplo de uso:**
 ```Python
@@ -61,34 +91,5 @@ while run:
 *Isso fará com que seu sprite seja exibido no centro da janela*
 
 OBS.: Este exemplo de código está <a href="https://github.com/PyLuuu/PLSprite/blob/main/testes/construindo_avatar.py">aqui</a>, outros tutoriais estão na pasta <code><a href="testes">testes</code>.
-
-### Benefícios
-O nosso projeto tem como base ajudar a facilitar a maniuplação de spritesheets disponibilizando<br/>
-diversas ferramentas de manipulação.
-
-Como a classe <code>Avatar()</code>, que é responsável por tratar de spritesheets <code>AHLV</code>, <code>AHLH</code>, <code>AVLH</code> e <br/><code>AVLV</code>(não disponível ainda),
-
-<code>AHLV</code>: Animação na Horizontal e Lados na Vertical<br/>
-<code>AHLH</code>: Animação na Horizontal e Lados na Horizontal<br/>
-<code>AVLH</code>: Animação na Vertical e Lados na Horizontal<br/>
-<code>AVLV</code>: Animação na Vertical e Lados na Vertical<br/>
-
-
-**Exemplo de spritesheet** <code>AHLV</code>:
-
-![Imagem AHLV](testes/imagens/adao_andando.png)
-
-
-**Exemplo de spritesheet** <code>AHLH</code>:
-
-![Imagem AHLH](testes/imagens/primo_mario_andando.png)
-
-
-**Exemplo de spritesheet** <code>AVLH</code>:
-
-![Imagem AVLH](testes/imagens/nora_andando.png)
-
-
-**Exemplo de spritesheet** <code>AVLV</code>: (não disponível ainda)
 
 *Para mais detalhes de como usar estes tipos de spritesheets olhe o diretório de <code>testes</code>*
