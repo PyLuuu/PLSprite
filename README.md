@@ -1,6 +1,9 @@
 # PLSprite
 
-![] https;//img.shields.io/badge/Python-3-black
+<img alt="GitHub Language Count" src="https://img.shields.io/github/languages/count/Pyluuu/PLSprite" />
+<img alt="GitHub Top Language" src="https://img.shields.io/github/languages/top/Pyluuu/PLSprite" />
+<img alt="" src="https://img.shields.io/github/repo-size/Pyluuu/PLSprite" />
+
 
 Este projeto foi desenvolvido no propósito de facilitar a manipulação<br/>
 de spritesheets para games 2D com uso da biblioteca <a href="https://pygame.org">Pygame</a>
