@@ -14,8 +14,8 @@ sua preferência, com a seguinte linha de comando: <code>pip install pygame</cod
 
 ### Como melhorar
 Para que você possa adicionar melhorias ao projeto e queira desenvolver novas <br/>
-funcionalidades, você pode clonar o repositório com a seguinte linha de comando: <br/>
-<code>git clone https://github.com/Pyluuu/PLSprite</code>, use este comando dentro do <br/>
+funcionalidades, você pode clonar o repositório com a seguinte linha de <br/>
+comando: <code>git clone https://github.com/Pyluuu/PLSprite</code>, use este comando dentro do <br/>
 diretório que deseja clonar o repositório.
 
 ### Benefícios
