@@ -28,11 +28,27 @@ import pygame as pg
 pg.init() # Inicializando o Pygame
 largura = altura = 500 # dimensoes da janela
 janela = pg.display.set_mode((largura, altura)) # criando janela
+adao_spritesheet = pg.image.load('adao_andando.png') # pegando a imagem do meu spritesheet
 run = True # estado do programa
+
+# criando objeto
+adao = Avatar(janela,
+              adao_spritesheet,
+              0,
+              0,
+              largura//2,
+              altura//2,
+              60,
+              60,
+              animacao_h=True,
+              )
 
 while run:
   for event in pg.event.get(): # verificando lista de eventos do Pygame
     if event.type == pg.QUIT: # ao clicar para fechar a janela o event.type sera QUIT
       run = False # estado do programa recebe False
-  tela.fill((0, 0, 0)) # apos loop preenche a tela com a cor RGB 0, 0, 0, ou seja, preto
+  tela.fill((0, 0, 0)) # apos cada loop preenche a tela com a cor RGB 0, 0, 0, ou seja, preto
+  
+  janela.display.flip() # apos cada loop atualiza a superficie
+  
 ```
