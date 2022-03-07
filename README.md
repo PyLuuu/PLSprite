@@ -52,3 +52,4 @@ while run:
   janela.display.flip() # apos cada loop atualiza a superficie
   
 ```
+https://www.youtube.com/embed/7IFZnyQhgfU?start=8127
