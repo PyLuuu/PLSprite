@@ -69,4 +69,4 @@ Como a classe <code>Avatar()</code>, que é responsável por tratar de spriteshe
 Animações na Horizontal e Lados na Vertical.
 
 **Exemplo de spritesheet AHLV:**
-
+![aqui](testes/imagens/adao_andando.png)
