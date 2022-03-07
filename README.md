@@ -90,6 +90,5 @@ while run:
 ```
 *Isso fará com que seu sprite seja exibido no centro da janela*
 
-OBS.: Este exemplo de código está <a href="https://github.com/PyLuuu/PLSprite/blob/main/testes/construindo_avatar.py">aqui</a>, outros tutoriais estão na pasta <code><a href="testes">testes</code>.
+OBS.: Este exemplo de código está <a href="https://github.com/PyLuuu/PLSprite/blob/main/testes/construindo_avatar.py">aqui</a>, outros tutoriais de como usar cada tipo de spritesheets estão na pasta <code><a href="testes">testes</a></code>.
 
-*Para mais detalhes de como usar estes tipos de spritesheets olhe o diretório de <code>testes</code>*
