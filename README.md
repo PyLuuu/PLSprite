@@ -73,20 +73,20 @@ Como a classe <code>Avatar()</code>, que é responsável por tratar de spriteshe
 <code>AVLV</code>: Animação na Vertical e Lados na Vertical<br/>
 
 
-**Exemplo de spritesheet AHLV:**
+**Exemplo de spritesheet** <code>AHLV</code>:
 
 ![Imagem AHLV](testes/imagens/adao_andando.png)
 
 
-**Exemplo de spritesheet AHLH:**
+**Exemplo de spritesheet** <code>AHLH</code>:
 
 ![Imagem AHLH](testes/imagens/primo_mario_andando.png)
 
 
-**Exemplo de spritesheet AVLH:**
+**Exemplo de spritesheet** <code>AVLH</code>:
 
 ![Imagem AVLH](testes/imagens/nora_andando.png)
 
-**Exemplo de spritesheet AVLV:** (não disponível ainda)
+**Exemplo de spritesheet** <code>AVLV</code>: (não disponível ainda)
 
-*Para mais detalhes de como usar estes tipos de spritesheets olhe o diretório de <code>testes</code>*
+*Para mais detalhes de como usar estes tipos de spritesheets olhe o diretório de <code><a href="testes">testes</a></code>*
