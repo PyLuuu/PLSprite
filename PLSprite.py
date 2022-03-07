@@ -613,7 +613,7 @@ class Avatar(SpritesDiversos):
     
     def atualizar(self):
         """Método responsável por atualizar a animação do sprite"""
-        self._inciar_sprite()
+        self._iniciar_sprite()
         self._acao() # verificando se há alguma tecla de movimento sendo pressionada
         if self.dimensao_sprite:
             self.sprite = pygame.transform.scale(self.sprite, self.dimensao_sprite)
