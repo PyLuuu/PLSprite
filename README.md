@@ -70,4 +70,6 @@ Animações na Horizontal e Lados na Vertical.
 
 **Exemplo de spritesheet AHLV:**
 
-![Imagem Animação na Horizontal e Lados na Vertical](testes/imagens/adao_andando.png)
+![Imagem Animação na Horizontal e Lados na Vertical(AHLV)](testes/imagens/adao_andando.png)
+
+Com a mesma classe <code>Avatar()</code> passando o parâmetro <code>animacao_h</code>
