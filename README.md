@@ -87,6 +87,7 @@ Como a classe <code>Avatar()</code>, que é responsável por tratar de spriteshe
 
 ![Imagem AVLH](testes/imagens/nora_andando.png)
 
+
 **Exemplo de spritesheet** <code>AVLV</code>: (não disponível ainda)
 
-*Para mais detalhes de como usar estes tipos de spritesheets olhe o diretório de <code><a href="testes">testes</a></code>*
+*Para mais detalhes de como usar estes tipos de spritesheets olhe o diretório de <code>testes</code>*
