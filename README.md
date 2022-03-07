@@ -56,11 +56,23 @@ import pygame as pg
 *Importar a biblioteca Pygame e o nosso projeto, PLSprite, para que possamos começar a trabalhar.*
 *Após a importação da biblioteca Pygame e do nosso projeto vamos construir um avatar*
 
-**Antes de tudo**
+#### Antes de tudo
 
 Parâmetros da Classe <code>Avatar()</code>
 tela
 sprite
+p_img_x
+p_img_y
+x
+y
+largura
+altura
+lados
+animacao_h=False
+animacao_v=False
+num_animacao_h=0
+num_animacao_v=0
+dimensao=None
 
 
 **Exemplo de uso:**
