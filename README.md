@@ -93,3 +93,8 @@ while run:
 OBS.: Este exemplo de código está <a href="https://github.com/PyLuuu/PLSprite/blob/main/testes/construindo_avatar.py">aqui</a>, outros tutoriais de como usar cada tipo de spritesheets estão na pasta <code><a href="testes">testes</a></code>.
 
 *Vá até o diretório de <code>testes</code>isso o ajudará a entender na prática como funciona nosso projeto.*
+
+### Para contribuidores
+Todos são muito bem-vindos(as)! Caso tenham ideias de como melhorar este projeto se manifeste 
+e nos ajude a evoluir, peço que sejam criativos. Caso encontrem bugs não incomode se em resolve-los, 
+e ajude este pequeno projeto a se tornar algo útil para desenvolvedores de jogos 2d.
