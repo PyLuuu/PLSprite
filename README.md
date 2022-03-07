@@ -57,7 +57,11 @@ import pygame as pg
 *Após a importação da biblioteca Pygame e do nosso projeto vamos construir um avatar*
 
 **Antes de tudo**
+
 Parâmetros da Classe <code>Avatar()</code>
+tela
+sprite
+
 
 **Exemplo de uso:**
 ```Python
