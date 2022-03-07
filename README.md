@@ -1,6 +1,6 @@
 # PLSprite
 
-<img alt="GitHub Language Count" src="https://img.shields.io/github/languages/count/Pyluuu/PLSprite" /> <img alt="GitHub Top Language" src="https://img.shields.io/github/languages/top/Pyluuu/PLSprite" /> <img alt="" src="https://img.shields.io/github/repo-size/Pyluuu/PLSprite" /> <img alt="Github License" src="https://img.shields.io/github/license/pyluuu/PLSprite" />
+<img alt="Github License" src="https://img.shields.io/github/license/pyluuu/PLSprite" /> <img alt="GitHub Top Language" src="https://img.shields.io/github/languages/top/Pyluuu/PLSprite" /> <img alt="GitHub Language Count" src="https://img.shields.io/github/languages/count/Pyluuu/PLSprite" /> <img alt="File size" src="https://img.shields.io/github/repo-size/Pyluuu/PLSprite" />
 
 Este projeto foi desenvolvido com propósito de facilitar a manipulação<br/>
 de spritesheets para games 2D com uso da biblioteca Pygame
@@ -29,7 +29,7 @@ import pygame as pg
 **Exemplo de uso:**
 ```Python
 pg.init() # Inicializando o Pygame
-largura = altura = 500 # dimensoes da janela
+largura = altura = 500 # dimensões da janela
 janela = pg.display.set_mode((largura, altura)) # criando janela
 adao_spritesheet = pg.image.load('adao_andando.png') # pegando a imagem do meu spritesheet
 run = True # estado do programa
@@ -51,9 +51,10 @@ while run:
     if event.type == pg.QUIT: # ao clicar para fechar a janela o event.type sera QUIT
       run = False # estado do programa recebe False
   
-  tela.fill((0, 0, 0)) # apos cada loop preenche a tela com a cor RGB 0, 0, 0, ou seja, preto
+  tela.fill((0, 0, 0)) # após cada loop preenche a janela com a cor RGB: (0, 0, 0), ou seja, preto
   adao.atualizar() # fará com que o seu sprite seja desenhado na janela
   
-  janela.display.flip() # apos cada loop atualiza a superficie
+  janela.display.flip() # após cada loop atualiza a janela
   
 ```
+*Isso fará com que seu sprite seja exibido no centro da janela
