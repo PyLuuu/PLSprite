@@ -6,7 +6,6 @@ Este projeto foi desenvolvido com propósito de facilitar a manipulação<br/>
 de spritesheets para games 2D com uso da biblioteca Pygame
 
 ### Instalação
-
 <code>pip install PLSprite</code> (não disponível, dia 07/03/2022)
 
 Para que consiga fazer uso do nosso projeto você precisará apenas instalar a <br/>
@@ -18,5 +17,8 @@ Para que você possa adicionar melhorias ao projeto e queira desenvolver novas
 funcionalidades, você pode clonar o repositório com a seguinte linha de comando: <code>git clone https://github.com/Pyluuu/PLSprite</code>, use este comando dentro do diretório que deseja clonar o repositório.
 
 ## Como usar
-Importando
-<code>
+Importações necessárias:
+
+<code>import PLSprite as PLS</code>
+<code>import pygame as pg</code>
+
