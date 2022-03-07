@@ -65,8 +65,8 @@ OBS.: Este exemplo de código está <a href="https://github.com/PyLuuu/PLSprite/
 O nosso projeto tem como base ajudar a facilitar a maniuplação de spritesheets disponibilizando<br/>
 diversas ferramentas de manipulação.
 
-Como a classe <code>Avatar()</code>, que é responsável por tratar de spritesheets AHLV, Animações na<br/>
-Horizontal e Lados na Vertical.
+Como a classe <code>Avatar()</code>, que é responsável por tratar de spritesheets AHLV, <br/>
+Animações na Horizontal e Lados na Vertical.
 
 **Exemplo de AHLV:**
 
