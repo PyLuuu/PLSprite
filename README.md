@@ -13,12 +13,26 @@ biblioteca Pygame. Para isso você pode usar o <code>pip</code>, ou algum instal
 sua preferência, com a seguinte linha de comando: <code>pip install pygame</code>.
 
 ### Como melhorar
-Para que você possa adicionar melhorias ao projeto e queira desenvolver novas
-funcionalidades, você pode clonar o repositório com a seguinte linha de comando: <code>git clone https://github.com/Pyluuu/PLSprite</code>, use este comando dentro do diretório que deseja clonar o repositório.
+Para que você possa adicionar melhorias ao projeto e queira desenvolver novas 
+funcionalidades, você pode clonar o repositório com a seguinte linha de comando: 
+<code>git clone https://github.com/Pyluuu/PLSprite</code>, use este comando dentro do 
+diretório que deseja clonar o repositório.
 
 ## Como usar
 Importações necessárias:
 
-<code>import PLSprite as PLS</code>
-<code>import pygame as pg</code>
+```Python
+import PLSprite as PLS
+import pygame as pg
 
+pg.init() # Inicializando o Pygame
+largura = altura = 500 # dimensoes da janela
+janela = pg.display.set_mode((largura, altura)) # criando janela
+run = True # estado do programa
+
+while run:
+  for event in pg.event.get(): # verificando lista de eventos do Pygame
+    if event.type == pg.QUIT: # ao clicar para fechar a janela o event.type sera QUIT
+      run = False # estado do programa recebe False
+  tela.fill((0, 0, 0)) # apos loop preenche a tela com a cor RGB 0, 0, 0, ou seja, preto
+```
