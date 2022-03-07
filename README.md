@@ -59,21 +59,37 @@ import pygame as pg
 #### Antes de tudo
 
 Parâmetros da Classe <code>Avatar()</code>
-tela
-sprite
-p_img_x
-p_img_y
-x
-y
-largura
-altura
-lados
-animacao_h=False
-animacao_v=False
-num_animacao_h=0
-num_animacao_v=0
-dimensao=None
 
+<ul>
+  <code>tela</code>: Você deve passar a janela onde seus sprites serão desenhados
+  
+  <code>sprite</code>: Você deve passar o spritesheet que irá trabalhar
+  
+  <code>p_img_x</code>: p_img_x(personagem imagem x) a posição x do meu sprite dentro do spritesheet
+  
+  
+  <code>p_img_y</code>:
+  
+  <code>x</code>:
+  
+  <code>y</code>:
+  
+  <code>largura</code>:
+  
+  <code>altura</code>:
+  
+  <code>lados</code>:
+  
+  <code>animacao_h=False</code>:
+  
+  <code>animacao_v=False</code>:
+  
+  <code>num_animacao_h=0</code>:
+  
+  <code>num_animacao_v=0</code>:
+  
+  <code>dimensao=None</code>:
+</ul>
 
 **Exemplo de uso:**
 ```Python
