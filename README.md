@@ -127,7 +127,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ### Criadores
-**PyLuu**
+- **PyLuu**
 
 ### Contato
-Pyluucatnet@gmail.com
+- Pyluucatnet@gmail.com
