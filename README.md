@@ -35,7 +35,7 @@ adao_spritesheet = pg.image.load('adao_andando.png') # pegando a imagem do meu s
 run = True # estado do programa
 
 # criando objeto
-adao = Avatar(janela,
+adao = PLS.Avatar(janela,
               adao_spritesheet,
               0,
               0,
