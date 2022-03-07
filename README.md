@@ -100,4 +100,4 @@ e nos ajude a evoluir, peço que sejam criativos. Caso encontre bugs não se inc
 e ajude este pequeno projeto a se tornar uma ferramenta útil para desenvolvedores de jogos 2d.
 
 # Links
-- <a href="https://pygame.com">Link para o site oficial do Pygame</a>
+- <a href="https://www.pygame.org/">Link para o site oficial do Pygame</a>
