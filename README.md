@@ -13,9 +13,9 @@ biblioteca Pygame. Para isso você pode usar o <code>pip</code>, ou algum instal
 sua preferência, com a seguinte linha de comando: <code>pip install pygame</code>.
 
 ### Como melhorar
-Para que você possa adicionar melhorias ao projeto e queira desenvolver novas 
-funcionalidades, você pode clonar o repositório com a seguinte linha de comando: 
-<code>git clone https://github.com/Pyluuu/PLSprite</code>, use este comando dentro do 
+Para que você possa adicionar melhorias ao projeto e queira desenvolver novas <br/>
+funcionalidades, você pode clonar o repositório com a seguinte linha de comando: <br/>
+<code>git clone https://github.com/Pyluuu/PLSprite</code>, use este comando dentro do <br/>
 diretório que deseja clonar o repositório.
 
 ## Como usar
@@ -59,4 +59,9 @@ while run:
 ```
 *Isso fará com que seu sprite seja exibido no centro da janela*
 
-OBS.: Este exemplo de código está <a href="https://github.com/PyLuuu/PLSprite/blob/main/testes/construindo_avatar.py">aqui</a>, outros tutoriais estão na pasta <code><a href="testes">testes</code>
+OBS.: Este exemplo de código está <a href="https://github.com/PyLuuu/PLSprite/blob/main/testes/construindo_avatar.py">aqui</a>, outros tutoriais estão na pasta <code><a href="testes">testes</code>.
+
+### Benefícios
+O nosso projeto tem como base ajudar a facilitar a maniuplação de spritesheets disponibilizando<br/>
+diversas ferramentas de manipulação.
+
