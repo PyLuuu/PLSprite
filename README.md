@@ -112,9 +112,22 @@ Parâmetros da Classe <code>Avatar()</code>
 
 ![Spritesheet com marcações](testes/imagens/sprite_adao_marcacao.png)
 
-***Esta imagem contém as marcações de 3 parâmetros***
+***Esta imagem contém as marcações de 4 parâmetros***
+
 O <code>x</code> nos 3 primeiros sprites representa o parâmetro <code>p_img_x</code>, ou seja, onde inicia o sprite.
 O <code>y</coed> nos 3 próximos sprites representa o parâmetro <code>p_img_y</code>, ou seja, onde inicia o sprite.
+
+**Estes dois parâmetros definem qual sprite será exibido
+
+Largura é a largura do sprite, um valor do tipo <code>int</code>, para definir a largura do sprite.
+
+Na hora de exibir o sprite ele pegará da <code>p_img_x</code> até a largura definida.
+
+*Semelhantemente a altura funciona da mesma forma.
+
+Altura é a altura do sprite, um valor do tipo <code>itn</code>, para definir a altura do sprite.
+
+Na hora de exibir, vai da <code>p_img_y</code> até a altura definida
 
 **Exemplo de uso:**
 ```Python
