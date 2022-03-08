@@ -102,6 +102,8 @@ Parâmetros da Classe <code>Avatar()</code>
 <code>num_animacao_h</code><br/>
 <code>num_animacao_v</code><br/>
 
+!&*(9(*&7&65%HJKL:POIUYA|\ZxA\z?'̂''̃́-=U
+
 **Exemplo de uso:**
 ```Python
 pg.init() # Inicializando o Pygame
