@@ -88,25 +88,7 @@ Parâmetros da Classe <code>Avatar()</code>
 
 **dimensao=None**: Recebe uma lista/tupla com a nova dimensão(largura e altura) do sprite.
 
-### Entradas de parâmetros
-
-**p_img_x**
-
-**p_img_y**
-
-**largura**
-
-**altura**
-
-**lados**
-
-**animacao_h**
-
-**animacao_v**
-
-**num_animacao_h**
-
-**num_animacao_v**
+### Explicando entradas de parâmetros
 
 ![Spritesheet com marcações](testes/imagens/sprite_adao_marcacao.png)
 
@@ -143,9 +125,13 @@ animação_h=True, porém a classe <code>Avatar()</code> tem como padrão <br/>
 manipular spritesheet **<a href="https://github.com/PyLuuu/PLSprite/edit/main/README.md#benef%C3%ADcios">AHLV</a>**(Animação na Horizontal e Lados na Vertical), <br/>
 mas caso seu spritesheet seja **<a href="https://github.com/PyLuuu/PLSprite/edit/main/README.md#benef%C3%ADcios">AHLH</a>**(Animação na Horizontal e Lados na Horizontal), você deve definir o parâmetro animacao_h=True.
 
-O parâmetro **lados**, se os lados do seu spritesheets estiverem na vertical os valores <br/>
-da lista/tupla deve estar na seguinte ordem cima/costa, baixo/frente, esquerda e direita.<br/> 
-Devem ser os valores **p_img_y** de cada sprite dentro da spritesheet.
+O parâmetro **lados**, independente dos lados do seu spritesheets estarem na horizontal ou<br/> 
+vertical os valores da lista/tupla devem estar na seguinte ordem cima/costa, baixo/frente, <br/>
+esquerda e direita. Se os lados do seu spritesheet estiverem na vertical, **lados** deve ter <br/>
+os valores de **p_img_y** da spritesheet, mas se os lados do seu spritesheet estiverem na <br/>
+horizontal **lados** deve receber os valores de **p_img_x** de cada sprite dentro da spritesheet.
+
+***Agora vamos para a prática***
 
 **Exemplo de uso:**
 ```Python
@@ -222,3 +208,8 @@ SOFTWARE.
 
 ### Contato
 - Pyluucatnet@gmail.com
+
+
+**OBS.**: Este é meu primeiro README.md. Peço desculpa desde já caso não tenha ficado muito <br/>
+claro a explicação dos parâmetros para construir um avatar. Para melhor compreenção peço <br/>
+que leia as docstrings do nosso projeto. Obrigado por usar nosso projeto.
