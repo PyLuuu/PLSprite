@@ -102,7 +102,7 @@ Parâmetros da Classe <code>Avatar()</code>
 <code>num_animacao_h</code><br/>
 <code>num_animacao_v</code><br/>
 
-!&*(9(*&7&65%HJKL:POIUYA|\ZxA\z?'̂''̃́-=U
+![Spritesheet com marcações](testes/imagens/sprite_adao_marcacao.png)
 
 **Exemplo de uso:**
 ```Python
