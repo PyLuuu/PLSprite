@@ -65,30 +65,29 @@ Parâmetros da Classe <code>Avatar()</code>
   
   <code>sprite</code>: Você deve passar o spritesheet que irá trabalhar
   
-  <code>p_img_x</code>: p_img_x(personagem imagem x) a posição x do meu sprite dentro do spritesheet
+  <code>p_img_x</code>: p_img_x(personagem imagem x). A posição x do meu sprite dentro do spritesheet.
   
+  <code>p_img_y</code>: p_img_y(personagem imagem y). A posição y do meu sprite dentro do spritesheet.
   
-  <code>p_img_y</code>:
+  <code>x</code>: Recebe um valor do tipo int, a posição x do sprite.
   
-  <code>x</code>:
+  <code>y</code>: Recebe um valor do tipo int, a posição y do sprite.
   
-  <code>y</code>:
+  <code>largura</code>: Largura do sprite, um valor do tipo int.
   
-  <code>largura</code>:
+  <code>altura</code>: Altura do sprite, um valor do tipo int.
   
-  <code>altura</code>:
+  <code>lados</code>: Uma lista/tupla com os lados do seu sprite.
   
-  <code>lados</code>:
+  <code>animacao_h=False</code>: Recebe um valor booleano. Se este parâmetro não for passado o padrão é False.
   
-  <code>animacao_h=False</code>:
+  <code>animacao_v=False</code>: Recebe um valor booleano. Se este parâmetro não for passado o padrão é False.
   
-  <code>animacao_v=False</code>:
+  <code>num_animacao_h=0</code>: Recebe um valor do tipo int, a quantidade de sprites na horizontal.
   
-  <code>num_animacao_h=0</code>:
+  <code>num_animacao_v=0</code>: Recebe um valor do tipo int, a quantidade de sprites na vertical.
   
-  <code>num_animacao_v=0</code>:
-  
-  <code>dimensao=None</code>:
+  <code>dimensao=None</code>: Recebe uma lista/tupla com a nova dimensão(largura e altura) do sprite.
 </ul>
 
 **Exemplo de uso:**
