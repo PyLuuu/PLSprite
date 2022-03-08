@@ -61,9 +61,9 @@ import pygame as pg
 Parâmetros da Classe <code>Avatar()</code>
 
 **tela**: Você deve passar a janela onde seus sprites serão desenhados.
-  
+
 **sprite**: Você deve passar o spritesheet que irá trabalhar.
-  
+
 **p_img_x**: p_img_x(personagem imagem x). A posição x do meu sprite dentro do spritesheet.
 
 **p_img_y**: p_img_y(personagem imagem y). A posição y do meu sprite dentro do spritesheet.
@@ -112,22 +112,40 @@ Parâmetros da Classe <code>Avatar()</code>
 
 ***Esta imagem contém as marcações de 4 parâmetros***
 
-O **x** nos 3 primeiros sprites representa o parâmetro **p_img_x**, ou seja, onde inicia o sprite.<br/>
-**OBS.:** p_img_x não é o mesmo que o parâmetro x, p_img_x é a posição x do sprite dentro do spritesheet
+O **x** nos 3 primeiros sprites representa o parâmetro **p_img_x**, ou seja, onde inicia<br/>
+o sprite na horizontal.
 
-O **y** nos 3 próximos sprites representa o parâmetro <code>p_img_y</code>, ou seja, onde inicia o sprite.
+**OBS.:** p_img_x não é o mesmo que o parâmetro x, enquanto x é a posição <br/>
+do sprite na janela p_img_x é a do sprite dentro do spritesheet.
 
-**Estes dois parâmetros definem qual sprite será exibido
 
-Largura é a largura do sprite, um valor do tipo <code>int</code>, para definir a largura do sprite.
+O **y** nos 3 próximos sprites representa o parâmetro **p_img_y**, ou seja, onde inicia<br/>
+o sprite na vertical.
 
-Na hora de exibir o sprite ele pegará da <code>p_img_x</code> até a largura definida.
+p_img_y não é y, p_img_y é a posição y dentro do spritesheet enquanto <br/>
+y é a posição dentro da janela.
 
-*Semelhantemente a altura funciona da mesma forma.
+Os parâmetros **largura** e **altura** são exatamente isso, a largura e altura do sprite.
 
-Altura é a altura do sprite, um valor do tipo <code>itn</code>, para definir a altura do sprite.
+Quando o sprite for exibido na janela a lógica é simples, ele pegará do parâmetro<br/>
+**p_img_x** até a **largura**, pegando assim a parte horizontal do sprite, e em seguida<br/>
+de **p_img_y** até a **altura**, pegando toda a parte vertical do sprite.
 
-Na hora de exibir, vai da <code>p_img_y</code> até a altura definida
+**animacao_h**: se a animação dos seus sprites estiverem na horizontal <br/>
+passe True para este parâmetro.
+
+**animacao_v**: se a animação dos seus sprites estiverem na vertical <br/>
+passe True para este parâmetro.
+
+O sprite com as marcações tem as animações na horizontal, enquanto os <br/>
+lados(costa, esquerda, frente, direita) estão na vertical. Nesse caso <br/>
+animação_h=True, porém a classe <code>Avatar()</code> tem como padrão <br/>
+manipular spritesheet **<a href="https://github.com/PyLuuu/PLSprite/edit/main/README.md#benef%C3%ADcios">AHLV</a>**(Animação na Horizontal e Lados na Vertical), <br/>
+mas caso seu spritesheet seja **<a href="https://github.com/PyLuuu/PLSprite/edit/main/README.md#benef%C3%ADcios">AHLH</a>**(Animação na Horizontal e Lados na Horizontal), você deve definir o parâmetro animacao_h=True.
+
+O parâmetro **lados**, se os lados do seu spritesheets estiverem na vertical os valores <br/>
+da lista/tupla deve estar na seguinte ordem cima/costa, baixo/frente, esquerda e direita.<br/> 
+Devem ser os valores **p_img_y** de cada sprite dentro da spritesheet.
 
 **Exemplo de uso:**
 ```Python
