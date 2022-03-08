@@ -92,17 +92,29 @@ Parâmetros da Classe <code>Avatar()</code>
 
 **Alguns parâmetros confusos?**
 
-<code>p_img_x</code><br/>
-<code>p_img_y</code><br/>
-<code>largura</code><br/>
-<code>altura</code><br/>
-<code>lados</lados><br/>
-<code>animacao_h</code><br/>
-<code>animacao_v</code><br/>
-<code>num_animacao_h</code><br/>
-<code>num_animacao_v</code><br/>
+<code>p_img_x</code>
+
+<code>p_img_y</code>
+
+<code>largura</code>
+
+<code>altura</code>
+
+<code>lados</lados>
+
+<code>animacao_h</code>
+
+<code>animacao_v</code>
+
+<code>num_animacao_h</code>
+
+<code>num_animacao_v</code>
 
 ![Spritesheet com marcações](testes/imagens/sprite_adao_marcacao.png)
+
+***Esta imagem contém as marcações de 3 parâmetros***
+O <code>x</code> nos 3 primeiros sprites representa o parâmetro <code>p_img_x</code>, ou seja, onde inicia o sprite.
+O <code>y</coed> nos 3 próximos sprites representa o parâmetro <code>p_img_y</code>, ou seja, onde inicia o sprite.
 
 **Exemplo de uso:**
 ```Python
