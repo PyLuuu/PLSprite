@@ -60,62 +60,62 @@ import pygame as pg
 
 Parâmetros da Classe <code>Avatar()</code>
 
-<ul>
-  <code>tela</code>: Você deve passar a janela onde seus sprites serão desenhados.
+**tela**: Você deve passar a janela onde seus sprites serão desenhados.
   
-  <code>sprite</code>: Você deve passar o spritesheet que irá trabalhar.
+**sprite**: Você deve passar o spritesheet que irá trabalhar.
   
-  <code>p_img_x</code>: p_img_x(personagem imagem x). A posição x do meu sprite dentro do spritesheet.
-  
-  <code>p_img_y</code>: p_img_y(personagem imagem y). A posição y do meu sprite dentro do spritesheet.
-  
-  <code>x</code>: Recebe um valor do tipo int, a posição x do sprite.
-  
-  <code>y</code>: Recebe um valor do tipo int, a posição y do sprite.
-  
-  <code>largura</code>: Largura do sprite, um valor do tipo int.
-  
-  <code>altura</code>: Altura do sprite, um valor do tipo int.
-  
-  <code>lados</code>: Uma lista/tupla com os lados do seu sprite.
-  
-  <code>animacao_h=False</code>: Recebe um valor booleano. Se este parâmetro não for passado o padrão é False.
-  
-  <code>animacao_v=False</code>: Recebe um valor booleano. Se este parâmetro não for passado o padrão é False.
-  
-  <code>num_animacao_h=0</code>: Recebe um valor do tipo int, a quantidade de sprites na horizontal.
-  
-  <code>num_animacao_v=0</code>: Recebe um valor do tipo int, a quantidade de sprites na vertical.
-  
-  <code>dimensao=None</code>: Recebe uma lista/tupla com a nova dimensão(largura e altura) do sprite.
-</ul>
+**p_img_x**: p_img_x(personagem imagem x). A posição x do meu sprite dentro do spritesheet.
 
-**Alguns parâmetros confusos?**
+**p_img_y**: p_img_y(personagem imagem y). A posição y do meu sprite dentro do spritesheet.
 
-<code>p_img_x</code>
+**x**: Recebe um valor do tipo int, a posição x do sprite.
 
-<code>p_img_y</code>
+**y**: Recebe um valor do tipo int, a posição y do sprite.
 
-<code>largura</code>
+**largura**: Largura do sprite, um valor do tipo int.
 
-<code>altura</code>
+**altura**: Altura do sprite, um valor do tipo int.
 
-<code>lados</lados>
+**lados**: Uma lista/tupla com os lados do seu sprite.
 
-<code>animacao_h</code>
+**animacao_h=False**: Recebe um valor booleano. Se este parâmetro não for passado o padrão é False.
 
-<code>animacao_v</code>
+**animacao_v=False**: Recebe um valor booleano. Se este parâmetro não for passado o padrão é False.
 
-<code>num_animacao_h</code>
+**num_animacao_h=0**: Recebe um valor do tipo int, a quantidade de sprites na horizontal.
 
-<code>num_animacao_v</code>
+**num_animacao_v=0**: Recebe um valor do tipo int, a quantidade de sprites na vertical.
+
+**dimensao=None**: Recebe uma lista/tupla com a nova dimensão(largura e altura) do sprite.
+
+### Entradas de parâmetros
+
+**p_img_x**
+
+**p_img_y**
+
+**largura**
+
+**altura**
+
+**lados**
+
+**animacao_h**
+
+**animacao_v**
+
+**num_animacao_h**
+
+**num_animacao_v**
 
 ![Spritesheet com marcações](testes/imagens/sprite_adao_marcacao.png)
 
 ***Esta imagem contém as marcações de 4 parâmetros***
 
-O <code>x</code> nos 3 primeiros sprites representa o parâmetro <code>p_img_x</code>, ou seja, onde inicia o sprite.
-O <code>y</coed> nos 3 próximos sprites representa o parâmetro <code>p_img_y</code>, ou seja, onde inicia o sprite.
+O **x** nos 3 primeiros sprites representa o parâmetro **p_img_x**, ou seja, onde inicia o sprite.<br/>
+**OBS.:** p_img_x não é o mesmo que o parâmetro x, p_img_x é a posição x do sprite dentro do spritesheet
+
+O **y** nos 3 próximos sprites representa o parâmetro <code>p_img_y</code>, ou seja, onde inicia o sprite.
 
 **Estes dois parâmetros definem qual sprite será exibido
 
