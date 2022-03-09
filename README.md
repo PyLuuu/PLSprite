@@ -156,7 +156,7 @@ OBS.: Este exemplo de código está <a href="https://github.com/PyLuuu/PLSprite/
 # Para contribuidores
 Todos são muito bem-vindos(as)! Caso tenham ideias de como melhorar este projeto se manifeste 
 e nos ajude a evoluir, peço que sejam criativos. Caso encontre bugs não se incomode em resolve-los, 
-e ajude este pequeno projeto a se tornar uma ferramenta útil para desenvolvedores de jogos 2d.
+e ajude este pequeno projeto a se tornar uma ferramenta útil para desenvolvedores de jogos 2D.
 
 # Links
 - <a href="https://www.pygame.org/">Link para o site oficial do Pygame</a>
