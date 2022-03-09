@@ -8,15 +8,10 @@ de spritesheets para games 2D com uso da biblioteca Pygame
 ### Instalação
 <code>pip install PLSprite</code> (não disponível, dia 07/03/2022)
 
-Para que consiga fazer uso do nosso projeto você precisará apenas instalar a <br/>
-biblioteca Pygame. Para isso você pode usar o <code>pip</code>, ou algum instalador da <br/>
-sua preferência, com a seguinte linha de comando: <code>pip install pygame</code>.
+Para que consiga fazer uso do nosso projeto você precisará apenas instalar a biblioteca Pygame. Para isso você pode usar o <code>pip</code>, ou algum instalador da sua preferência, com a seguinte linha de comando: <code>pip install pygame</code>.
 
 ### Como melhorar
-Para que você possa adicionar melhorias ao projeto e queira desenvolver novas <br/>
-funcionalidades, você pode clonar o repositório com a seguinte linha de <br/>
-comando: <code>git clone https://github.com/Pyluuu/PLSprite</code>, use este comando dentro do <br/>
-diretório que deseja clonar o repositório.
+Para que você possa adicionar melhorias ao projeto e queira desenvolver novas funcionalidades, você pode clonar o repositório com a seguinte linha de comando: <code>git clone https://github.com/Pyluuu/PLSprite</code>, use este comando dentro do diretório que deseja clonar o repositório.
 
 ### Benefícios
 O nosso projeto tem como base ajudar a facilitar a maniuplação de spritesheets disponibilizando<br/>
@@ -24,10 +19,13 @@ diversas ferramentas de manipulação para os usuários.
 
 Como a classe <code>Avatar()</code>, que é responsável por tratar de spritesheets <code>AHLV</code>, <code>AHLH</code>, <code>AVLH</code> e <br/><code>AVLV</code>(não disponível ainda).
 
-<code>AHLV</code>: Animação na Horizontal e Lados na Vertical<br/>
-<code>AHLH</code>: Animação na Horizontal e Lados na Horizontal<br/>
-<code>AVLH</code>: Animação na Vertical e Lados na Horizontal<br/>
-<code>AVLV</code>: Animação na Vertical e Lados na Vertical<br/>
+<code>AHLV</code>: Animação na Horizontal e Lados na Vertical
+
+<code>AHLH</code>: Animação na Horizontal e Lados na Horizontal
+
+<code>AVLH</code>: Animação na Vertical e Lados na Horizontal
+
+<code>AVLV</code>: Animação na Vertical e Lados na Vertical
 
 **Exemplo de spritesheet** <code>AHLV</code>:
 
@@ -94,42 +92,26 @@ Parâmetros da Classe <code>Avatar()</code>
 
 ***Esta imagem contém as marcações de 4 parâmetros***
 
-O **x** nos 3 primeiros sprites representa o parâmetro **p_img_x**, ou seja, onde inicia<br/>
-o sprite na horizontal.
+O **x** nos 3 primeiros sprites representa o parâmetro **p_img_x**, ou seja, onde inicia o sprite na horizontal.
 
-**OBS.:** p_img_x não é o mesmo que o parâmetro x, enquanto x é a posição <br/>
-do sprite na janela p_img_x é a do sprite dentro do spritesheet.
+**OBS.:** p_img_x não é o mesmo que o parâmetro x, enquanto x é a posição do sprite na janela p_img_x é a do sprite dentro do spritesheet.
 
 
-O **y** nos 3 próximos sprites representa o parâmetro **p_img_y**, ou seja, onde inicia<br/>
-o sprite na vertical.
+O **y** nos 3 próximos sprites representa o parâmetro **p_img_y**, ou seja, onde inicia o sprite na vertical.
 
-p_img_y não é y, p_img_y é a posição y dentro do spritesheet enquanto <br/>
-y é a posição dentro da janela.
+p_img_y não é y, p_img_y é a posição y dentro do spritesheet enquanto y é a posição dentro da janela.
 
 Os parâmetros **largura** e **altura** são exatamente isso, a largura e altura do sprite.
 
-Quando o sprite for exibido na janela a lógica é simples, ele pegará do parâmetro<br/>
-**p_img_x** até a **largura**, pegando assim a parte horizontal do sprite, e em seguida<br/>
-de **p_img_y** até a **altura**, pegando toda a parte vertical do sprite.
+Quando o sprite for exibido na janela a lógica é simples, ele pegará do parâmetro **p_img_x** até a **largura**, pegando assim a parte horizontal do sprite, e em seguida de **p_img_y** até a **altura**, pegando toda a parte vertical do sprite.
 
-**animacao_h**: se a animação dos seus sprites estiverem na horizontal <br/>
-passe True para este parâmetro.
+**animacao_h**: se a animação dos seus sprites estiverem na horizontal passe True para este parâmetro.
 
-**animacao_v**: se a animação dos seus sprites estiverem na vertical <br/>
-passe True para este parâmetro.
+**animacao_v**: se a animação dos seus sprites estiverem na vertical passe True para este parâmetro.
 
-O sprite com as marcações tem as animações na horizontal, enquanto os <br/>
-lados(costa, esquerda, frente, direita) estão na vertical. Nesse caso <br/>
-animação_h=True, porém a classe <code>Avatar()</code> tem como padrão <br/>
-manipular spritesheet **<a href="https://github.com/PyLuuu/PLSprite/edit/main/README.md#benef%C3%ADcios">AHLV</a>**(Animação na Horizontal e Lados na Vertical), <br/>
-mas caso seu spritesheet seja **<a href="https://github.com/PyLuuu/PLSprite/edit/main/README.md#benef%C3%ADcios">AHLH</a>**(Animação na Horizontal e Lados na Horizontal), você deve definir o parâmetro animacao_h=True.
+O sprite com as marcações tem as animações na horizontal, enquanto os lados(costa, esquerda, frente, direita) estão na vertical. Nesse caso animação_h=True, porém a classe <code>Avatar()</code> tem como padrão manipular spritesheet **<a href="https://github.com/PyLuuu/PLSprite/edit/main/README.md#benef%C3%ADcios">AHLV</a>**(Animação na Horizontal e Lados na Vertical), mas caso seu spritesheet seja **<a href="https://github.com/PyLuuu/PLSprite/edit/main/README.md#benef%C3%ADcios">AHLH</a>**(Animação na Horizontal e Lados na Horizontal), você deve definir o parâmetro animacao_h=True.
 
-O parâmetro **lados**, independente dos lados do seu spritesheets estarem na horizontal ou<br/> 
-vertical os valores da lista/tupla devem estar na seguinte ordem cima/costa, baixo/frente, <br/>
-esquerda e direita. Se os lados do seu spritesheet estiverem na vertical, **lados** deve ter <br/>
-os valores de **p_img_y** da spritesheet, mas se os lados do seu spritesheet estiverem na <br/>
-horizontal **lados** deve receber os valores de **p_img_x** de cada sprite dentro da spritesheet.
+O parâmetro **lados**, independente dos lados do seu spritesheets estarem na horizontal ou vertical os valores da lista/tupla devem estar na seguinte ordem cima/costa, baixo/frente, esquerda e direita. Se os lados do seu spritesheet estiverem na vertical, **lados** deve ter os valores de **p_img_y** da spritesheet, mas se os lados do seu spritesheet estiverem na horizontal **lados** deve receber os valores de **p_img_x** de cada sprite dentro da spritesheet.
 
 ***Agora vamos para a prática***
 
