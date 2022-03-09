@@ -161,7 +161,7 @@ e ajude este pequeno projeto a se tornar uma ferramenta útil para desenvolvedor
 # Links
 - <a href="https://www.pygame.org/">Link para o site oficial do Pygame</a>
 
-# Licenciado por MIT License
+# Licença
 
 MIT License
 
