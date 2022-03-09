@@ -188,7 +188,7 @@ SOFTWARE.
 ### Criadores
 - **PyLuu**
 
-### Contato
+### Contatos
 - Pyluucatnet@gmail.com
 
 
