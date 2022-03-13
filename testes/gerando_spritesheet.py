@@ -10,14 +10,14 @@ tela = pg.display.set_mode((LARGURA, ALTURA))
 run = True
 
 # primeiro usando o pygame pegaremos as fotos desejadas
-naruto_correndo_direita1 = pg.image.load('imagem/correndo/naruto_correndo1.bmp')
-naruto_correndo_direita2 = pg.image.load('imagem/correndo/naruto_correndo2.bmp')
-naruto_correndo_direita3 = pg.image.load('imagem/correndo/naruto_correndo3.bmp')
-naruto_correndo_direita4 = pg.image.load('imagem/correndo/naruto_correndo4.bmp')
-naruto_correndo_direita5 = pg.image.load('imagem/correndo/naruto_correndo5.bmp')
-naruto_correndo_direita6 = pg.image.load('imagem/correndo/naruto_correndo6.bmp')
-naruto_correndo_direita7 = pg.image.load('imagem/correndo/naruto_correndo7.bmp')
-naruto_correndo_direita8 = pg.image.load('imagem/correndo/naruto_correndo8.bmp')
+naruto_correndo_direita1 = pg.image.load('imagens/correndo/naruto_correndo1.bmp')
+naruto_correndo_direita2 = pg.image.load('imagens/correndo/naruto_correndo2.bmp')
+naruto_correndo_direita3 = pg.image.load('imagens/correndo/naruto_correndo3.bmp')
+naruto_correndo_direita4 = pg.image.load('imagens/correndo/naruto_correndo4.bmp')
+naruto_correndo_direita5 = pg.image.load('imagens/correndo/naruto_correndo5.bmp')
+naruto_correndo_direita6 = pg.image.load('imagens/correndo/naruto_correndo6.bmp')
+naruto_correndo_direita7 = pg.image.load('imagens/correndo/naruto_correndo7.bmp')
+naruto_correndo_direita8 = pg.image.load('imagens/correndo/naruto_correndo8.bmp')
 # tupla com todos os sprites em ordem
 naruto_correndo_direita = (naruto_correndo_direita1, naruto_correndo_direita2,
                            naruto_correndo_direita3, naruto_correndo_direita4,
