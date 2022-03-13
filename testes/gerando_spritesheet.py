@@ -2,7 +2,7 @@
 # uma spritesheet
 
 import pygame as pg
-from PLSprite import GerarSpriteSheet
+from PLSprite import GerarSpriteSheet, inverteh
 
 pg.init()
 LARGURA, ALTURA = (1050, 550)
@@ -23,8 +23,11 @@ naruto_correndo_direita = (naruto_correndo_direita1, naruto_correndo_direita2,
                            naruto_correndo_direita3, naruto_correndo_direita4,
                            naruto_correndo_direita5, naruto_correndo_direita6,
                            naruto_correndo_direita7, naruto_correndo_direita1)
-naruto_correndo_esquerda = [pg.transform.flip(sprite, True, False) for sprite in naruto_correndo_direita]
-naruto_correndo = (naruto_correndo_direita, naruto_correndo_esquerda)
+# como podemos observar so tenho imagens do naruto correndo para a direita mais com a funçao inverth() posso inverter os sprites para esquerda e assim obter ele correndo para direita e esquerda
+naruto_correndo_esquerda = inverteh(naruto_correndo_direita) # inverteh() retorna uma lista dos sprites invertidos horizontalmente
+
+naruto_correndo = (naruto_correndo_direita,
+                   naruto_correndo_esquerda) # matriz de sprites
 
 # para mais informações leia as docstrings da classe
 naruto_spritesheet = GerarSpriteSheet(matriz_sprites=naruto_correndo,
