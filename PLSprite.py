@@ -20,6 +20,18 @@ from pygame.locals import *
 print('I\'m PLSprite. Welcome!')
 
 
+AHLV = 0
+AHLH = 1
+AVLH = 10
+AVLV = 11
+
+C_cima = 0
+C_baixo = 1
+C_esquerda = 10
+C_direita = 11
+C_lados = (C_cima, C_baixo, C_esquerda, C_direita)
+
+
 class GerarSpriteSheet:
     """
     Classe responsável por gerar spritesheet
@@ -93,7 +105,18 @@ class GerarSpriteSheet:
 
 class AnimaSprites:
     """Classe responsável pela manipulação de spritesheet com animações na horizontal"""
-    def __init__(self, tela, sprite, teclas_controle, largura, altura, p_img_x, p_img_y, x, y, num_animacao_h, dimensao_sprite=None):
+    def __init__(self,
+                 tela,
+                 sprite,
+                 teclas_controle,
+                 largura,
+                 altura,
+                 p_img_x,
+                 p_img_y,
+                 x,
+                 y,
+                 num_animacao_h,
+                 dimensao_sprite=None):
         """
         Inicializando objeto
         
@@ -252,14 +275,14 @@ class AnimaSprites:
 
 class SpritesDiversos:
     """
-    Classe para manipulação de tipos diferentes de sprites
+    Classe para manipulação de tipos diferentes de spritesheet
     
-    Tipos de sprites usados pela classe:
-        (v) Sprite com animações e lados na horizontal
+    Tipos de spritesheets usados pela classe:
+        (v) Spritesheet AHLH(Animação na Horizontal e Lados na Horizontal)
         
-        (v) Sprite com animação na vertical e lados na horizontal
+        (v) Spritesheet AVLH(Animação na Vertical e Lados na Horizontal)
         
-        (x) Sprite com animação e lados na vertical (em breve)
+        (x) Spritesheet AVLV(Animação na Vertical e Lados na vertical)(em breve)
     """
     def __init__(self, 
                  tela, 
@@ -510,17 +533,19 @@ class Avatar(SpritesDiversos):
     """
     Classe para manipulação de sprites padrão
     
-    (v) Animação na horizontal e lados na vertical
+    (v) Spritesheet AHLV(Animação na Horizontal e Lados na Vertical)
     """
-    def __init__(self, tela, 
-                       sprite, 
-                       p_img_x, 
-                       p_img_y, 
-                       x, 
-                       y, 
-                       largura, 
-                       altura, 
-                       lados, 
+    def __init__(self, tela,
+                       sprite,
+                       p_img_x,
+                       p_img_y,
+                       x,
+                       y,
+                       largura,
+                       altura,
+                       lado,
+                       num_lado,
+                       chave_lados,
                        animacao_h=False,
                        animacao_v=False,
                        num_animacao_h=0,
@@ -544,7 +569,7 @@ class Avatar(SpritesDiversos):
         :num_animacao_v: Recebe um valor do tipo int para definir a quantidade de animações na vertical do spritesheet
         :dimensao: Recebe uma lista/tupla com a largura e altura do sprite
         """
-        super().__init__(tela, 
+        '''super().__init__(tela, 
                          sprite, 
                          p_img_x,
                          p_img_y,
@@ -557,6 +582,7 @@ class Avatar(SpritesDiversos):
                          animacao_v,
                          num_animacao_h,
                          num_animacao_v)
+        '''
         self.tela = tela
         self.sprite = sprite
         self.p_img_x = p_img_x
@@ -565,15 +591,18 @@ class Avatar(SpritesDiversos):
         self.y = y
         self.largura = largura
         self.altura = altura
+        self.tipo_lado = lado
+        self.num_lado = num_lado
+        self.chave_lados = chave_lados
         self.num_animacao_h = num_animacao_h
         self.num_animacao_v = num_animacao_v
-        self.coords_lados = lados
         self.dimensao_sprite = dimensao
         self.movimento = 1
         self.velocidade = 1
         self.atraso_animacao = 0
         self.pasos = 5
-        self.acao_parado = False
+        self.acao_andando = False
+        self.animacao_padrao = None
         self.teclas_movimento = None
         self.avatar_visivel = True
         self.cor_fundo_avatar = (0, 0, 0)
@@ -589,37 +618,14 @@ class Avatar(SpritesDiversos):
             fundo_avatar.fill(self.cor_fundo_avatar)
             self.tela.blit(fundo_avatar, (self.x, self.y))
     
-    def _acao(self):
-        """Método responsável por verificar se o usuário pressionou alguma tecla de movimento"""
-        tecla = pygame.key.get_pressed()
-        if self.teclas_movimento:
-            if tecla[self.teclas_movimento[0]] or tecla[self.teclas_movimento[1]] or tecla[self.teclas_movimento[2]] or tecla[self.teclas_movimento[3]]:
-                self.acao_andando = True
-            else:
-                self.acao_andando = False
-                if self.animacao_padrao:
-                    self.p_img_x = self.animacao_padrao[0]
-                    if self.animacao_padrao:
-                        self.p_img_y = self.animacao_padrao[1]
-        else:
-            if tecla[K_w] or tecla[K_s] or tecla[K_a] or tecla[K_d]:
-                self.acao_andando = True
-            else:
-                self.acao_andando = False
-                if self.animacao_padrao:
-                    self.p_img_x = self.animacao_padrao[0]
-                    if self.animacao_padrao[1]:
-                        self.p_img_y = self.animacao_padrao[1]
-    
     def atualizar(self):
         """Método responsável por atualizar a animação do sprite"""
         self._iniciar_sprite()
-        self._acao() # verificando se há alguma tecla de movimento sendo pressionada
         if self.dimensao_sprite:
             self.sprite = pygame.transform.scale(self.sprite, self.dimensao_sprite)
         rect_sprite = self.sprite.get_rect()
-        if self.acao_parado or self.acao_andando:
-            if self.atraso_animacao >= (10 * self.velocidade):
+        if self.acao_andando: # se o sprite tiver em movimento ou definido para loop infinito
+            if self.atraso_animacao > (20 * self.velocidade):
                 # se movimento dividido por largura do avatar for igual
                 # ao numero de sprites na horizontal volta mostrar o inicio da sprite
                 if self.movimento // self.largura == self.num_animacao_h - 1:
@@ -629,56 +635,41 @@ class Avatar(SpritesDiversos):
                     self.p_img_x = self.movimento
                 self.atraso_animacao = 0
         else:
-            self.movimento = 1
             if self.animacao_padrao:
                 self.movimento = self.animacao_padrao[0]
-            self.p_img_x = self.movimento
-        #pygame.time.delay(self.velocidade * 50) # definindo delay da animação
+            self.p_img_x = self.movimento = 1
         self.atraso_animacao += 1
     
-    def controles(self, pasos=None):
+    def controles(self, teclas, pasos=None):
         """
         -> Método responsável por controlar o movimento do sprite
+           :teclas: Recebe uma lista/tupla com as chaves de movimento
+                    Exemplo: (pygame.K_w, pygame.K_s, pygame.K_a, pygame.K_d)
            :pasos: Se pasos não for definido recebe None e a velocidade será padrão
-        Info:
-            Teclas de movimento(padrão)
-                pygame.K_w = andar p/ cima
-                pygame.K_s = andar p/ baixo
-                pygame.K_a = andar p/ esquerda
-                pygame.K_d = andar p/ direita
         """
         if pasos:
             self.pasos = pasos
         tecla = pygame.key.get_pressed()
-        # sprites com animaçao na horizontal e lados na vertical
-        if self.teclas_movimento:
-            # teclas de movimento personalizada
-            if tecla[self.teclas_movimento[0]]: # andar para cima
-                self.p_img_y = self.coords_lados[0]
-                self.y -= self.pasos
-            elif tecla[self.teclas_movimento[1]]: # andar para baixo
-                self.p_img_y = self.coords_lados[1]
-                self.y += self.pasos
-            elif tecla[self.teclas_movimento[2]]: # andar para esquerda
-                self.p_img_y = self.coords_lados[2]
-                self.x -= self.pasos
-            elif tecla[self.teclas_movimento[3]]: # andar para direita
-                self.p_img_y = self.coords_lados[3]
-                self.x += self.pasos
+        self.acao_andando = False
+        if self.teclas_movimento: # teclas de movimento personalizada
+            for c in range(4):
+                if tecla[self.teclas_movimento[c]]:
+                    if self.tipo_lado == AHLV:
+                        self.p_img_y = self.altura * c
+                        if self.chave_lados[c] == C_cima:
+                            self.y -= self.pasos
+                            self.acao_andando = True
+                        elif self.chave_lados[c] == C_baixo:
+                            self.y += self.pasos
+                            self.acao_andando = True
+                        elif self.chave_lados[c] == C_esquerda:
+                            self.x -= self.pasos
+                            self.acao_andando = True
+                        elif self.chave_lados[c] == C_direita:
+                            self.x += self.pasos
+                            self.acao_andando = True
         else:
-            # teclas de movimento padrão
-            if tecla[K_w]:
-                self.p_img_y = self.coords_lados[0]
-                self.y -= self.pasos
-            elif tecla[K_s]:
-                self.p_img_y = self.coords_lados[1]
-                self.y += self.pasos
-            if tecla[K_a]:
-                self.p_img_y = self.coords_lados[2]
-                self.x -= self.pasos
-            elif tecla[K_d]:
-                self.p_img_y = self.coords_lados[3]
-                self.x += self.pasos
+            self.teclas_movimento = teclas
     
     def set_posx(self, pos_x):
         """
@@ -711,16 +702,16 @@ class Avatar(SpritesDiversos):
     def set_imgx(self, pos_x):
         """
         -> Método responsável por definir a posição X da imagem dentro do spritesheet
-           :pos_x: Recebe um valor do tipo int que define a posição x do sprite
+           :pos_x: Recebe um valor int para definir a posição x do sprite
         """
-        self.p_img_x = pos_x
+        self.p_img_x = pos_x * self.largura
     
     def set_imgy(self, pos_y):
         """
         -> Método responsável por definir a posição Y da imagem dentro do spritesheet
-           :pos_y: Recebe um valor do tipo int que define a posição y do sprite
+           :pos_y: Recebe um valor int para definir a posição y do sprite
         """
-        self.p_img_y = pos_y
+        self.p_img_y = pos_y * self.altura
     
     def set_janelah(self, largura):
         """
@@ -768,8 +759,7 @@ class Avatar(SpritesDiversos):
         -> Método responsável por definir o estado da animação
            :ativo: Recebe um valor booleano. Se ativo = True a animação ficará sempre ativa
         """
-        if ativo is True:
-            self.acao_parado = ativo
+        self.acao_andando = ativo
     
     def set_velocidade(self, velocidade):
         """
@@ -797,8 +787,8 @@ class Avatar(SpritesDiversos):
         self.pasos = pasos
     
     def get_sprite_atual(self):
-        """Método responsável por retornar o número do sprite atual"""
-        return self.movimento
+        """Método responsável por retornar o index do sprite atual"""
+        return self.movimento // self.largura
     
     def get_posx(self):
         """Método responsável por retornar a posição x do sprite"""
