@@ -2,7 +2,7 @@
 
 <img alt="Github License" src="https://img.shields.io/github/license/pyluuu/PLSprite" /> <img alt="GitHub Top Language" src="https://img.shields.io/github/languages/top/Pyluuu/PLSprite" /> <img alt="GitHub Language Count" src="https://img.shields.io/github/languages/count/Pyluuu/PLSprite" /> <img alt="File size" src="https://img.shields.io/github/repo-size/Pyluuu/PLSprite" />
 
-Este projeto foi desenvolvido com propósito de facilitar a manipulação<br/>
+Este projeto foi desenvolvido com propósito de facilitar a manipulação
 de spritesheets para games 2D com uso da biblioteca Pygame
 
 ### Instalação
@@ -14,10 +14,10 @@ Para que consiga fazer uso do nosso projeto você precisará apenas instalar a b
 Para que você possa adicionar melhorias ao projeto e queira desenvolver novas funcionalidades, você pode clonar o repositório com a seguinte linha de comando: <code>git clone https://github.com/Pyluuu/PLSprite</code>, use este comando dentro do diretório que deseja clonar o repositório.
 
 ### Benefícios
-O nosso projeto tem como base ajudar a facilitar a maniuplação de spritesheets disponibilizando<br/>
+O nosso projeto tem como base ajudar a facilitar a maniuplação de spritesheets disponibilizando
 diversas ferramentas de manipulação para os usuários.
 
-Como a classe <code>Avatar()</code>, que é responsável por tratar de spritesheets <code>AHLV</code>, <code>AHLH</code>, <code>AVLH</code> e <br/><code>AVLV</code>(não disponível ainda).
+Como a classe <code>Avatar()</code>, que é responsável por tratar de spritesheets <code>AHLV</code>, <code>AHLH</code>, <code>AVLH</code> e <code>AVLV</code>(não disponível ainda).
 
 <code>AHLV</code>: Animação na Horizontal e Lados na Vertical
 
@@ -192,6 +192,6 @@ SOFTWARE.
 - Pyluucatnet@gmail.com
 
 
-**OBS.**: Este é meu primeiro README.md. Peço desculpa desde já caso não tenha ficado muito <br/>
-claro a explicação dos parâmetros para construir um avatar. Para melhor compreenção peço <br/>
+**OBS.**: Este é meu primeiro README.md. Peço desculpa desde já caso não tenha ficado muito 
+claro a explicação dos parâmetros para construir um avatar. Para melhor compreenção peço 
 que leia as docstrings do nosso projeto. Obrigado por usar nosso projeto.
