@@ -17,9 +17,11 @@ Para que você possa adicionar melhorias ao projeto e queira desenvolver novas f
 O nosso projeto tem como base ajudar a facilitar a maniuplação de spritesheets disponibilizando
 diversas ferramentas de manipulação para os usuários.
 
-Como a classe <code>Avatar()</code>, que é responsável por tratar de spritesheets <code>AHLV</code>, <code>AHLH</code>, <code>AVLH</code> e <code>AVLV</code>(não disponível ainda).
+Como a classe <code>Avatar()</code>, que é responsável por tratar de spritesheets <code>AHLH</code>
 
-<code>AHLV</code>: Animação na Horizontal e Lados na Vertical
+***Atributos PLSprite:***
+
+<code>AHLV</code>: Animação na Horizontal e Lados na Vertical</del>
 
 <code>AHLH</code>: Animação na Horizontal e Lados na Horizontal
 
@@ -86,7 +88,7 @@ Parâmetros da Classe <code>Avatar()</code>
 
 **dimensao=None**: Recebe uma lista/tupla com a nova dimensão(largura e altura) do sprite.
 
-### Explicando entradas de parâmetros
+### Explicando entradas de alguns parâmetros
 
 ![Spritesheet com marcações](testes/imagens/sprite_adao_marcacao.png)
 
