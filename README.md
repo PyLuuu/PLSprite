@@ -1,6 +1,5 @@
 # ***Aviso!!!*** 20/03/2022
-### ***Observamos diversos erros no nosso projeto. Em breve disponibilizaremos uma versão com todos os erros corrigidos. Obrigado pela atenão.***
-**Obs.: As intruções abaixo estão desatualizadas então recomendamos que não clone o repositório para não ter uma esperiência frustrante.**
+### ***Observamos diversos erros no nosso projeto. Em breve disponibilizaremos uma versão com todos os erros corrigidos. Obrigado pela atenção.***
 
 
 # PLSprite
