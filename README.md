@@ -1,3 +1,7 @@
+# ***Aviso!!!*** 20/03/2022
+### ***Não recomendamos que clonem o repositório vários bugs foram encontrados, estamos reavaliando uma versão base do projeto para disponibilizar.***
+
+
 # PLSprite
 
 <img alt="Github License" src="https://img.shields.io/github/license/pyluuu/PLSprite" /> <img alt="GitHub Top Language" src="https://img.shields.io/github/languages/top/Pyluuu/PLSprite" /> <img alt="GitHub Language Count" src="https://img.shields.io/github/languages/count/Pyluuu/PLSprite" /> <img alt="File size" src="https://img.shields.io/github/repo-size/Pyluuu/PLSprite" />
