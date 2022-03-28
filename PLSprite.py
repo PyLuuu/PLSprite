@@ -43,13 +43,13 @@ def inverteh(sprites):
     return [pygame.transform.flip(sprite, True, False) for sprite in sprites]
 
 
-def invertv(sprites):
+def invertev(sprites):
     """
        >>> Função responsável por inverter sprites na vertical
              :sprites: Recebe uma lista/tupla com os sprites a serem invertidos na vertical
              :return: Retorna uma lista dos sprites invertidos na vertical
     """
-    return [pygame.transform.flip(sprite, False, true) for sprite in sprites]
+    return [pygame.transform.flip(sprite, False, True) for sprite in sprites]
 
 
 class GerarSpriteSheet:
@@ -242,16 +242,16 @@ class AnimaSprites:
     
     def iniciar(self):
         """Método responsável por iniciar a manipulação do spritesheet"""
-        janela_avatar = pg.Surface((self.largura, self.altura))
+        janela_avatar = pygame.Surface((self.largura, self.altura))
         if self.dimensao_sprite:
-            self.spritesheet = pg.transform.scale(self.spritesheet, self.dimensao_sprite)
+            self.spritesheet = pygame.transform.scale(self.spritesheet, self.dimensao_sprite)
         janela_avatar.blit(self.spritesheet, (0, 0), (self.p_img_x, self.p_img_y, self.largura, self.altura))
         self.tela.blit(janela_avatar, (self.x, self.y))
         self._controles()
     
     def _controles(self):
         """Método responsável por controlar as animações do sprite"""
-        keys = pg.key.get_pressed()
+        keys = pygame.key.get_pressed()
         for i, key in enumerate(self.teclas_controle):
             if keys[key]:
                 self.p_img_y = i * self.altura 
