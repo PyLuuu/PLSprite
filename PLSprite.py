@@ -165,7 +165,7 @@ class ConverteSpriteSheet:
         if self.d_spritesheet:
             self.spritesheet = pygame.transform.scale(self.spritesheet, self.d_spritesheet)
         if self.chave == AHLH:
-            self.novo_spritesheet = pygame.Surface((self.d_sprite[0] * self.num_animacao, self.d_sprite[1] * self.num_lados))
+            self.novo_spritesheet = pygame.Surface((self.d_sprite[0] * self.num_animacao + 10, self.d_sprite[1] * self.num_lados))
             self.novo_spritesheet.fill((0, 255, 0))
             self.largura_janela = self.spritesheet.get_rect()[-2] // self.num_lados
             self.altura_janela = self.d_sprite[1]
@@ -177,7 +177,7 @@ class ConverteSpriteSheet:
                     self.janela.set_colorkey(alfa_janela)
                     alfa_novo_spritesheet = self.novo_spritesheet.get_at((0, 0))
                     self.novo_spritesheet.set_colorkey(alfa_novo_spritesheet)
-                self.janela.blit(self.spritesheet, (0, 0), (self.largura_janela * c, self.d_sprite[1], self.largura_janela, self.altura_janela))
+                self.janela.blit(self.spritesheet, (0, 0), (self.largura_janela * c, 0, self.largura_janela, self.altura_janela))
                 self.novo_spritesheet.blit(self.janela, (0, self.altura_janela * c))
         elif self.chave == AVLV:
             pass

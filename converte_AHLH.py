@@ -19,7 +19,7 @@ spritesheet_primo_mario1 = ConverteSpriteSheet(
     3,
     3,
     AHLH,
-    (58, 55), alfa=False).converter() # Para mais detalhes sobre os parâmetros leia as docstrings.
+    (50, 55), alfa=False).converter() # Para mais detalhes sobre os parâmetros leia as docstrings.
 
 while run:
     for event in pygame.event.get():
