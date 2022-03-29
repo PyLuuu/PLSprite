@@ -94,41 +94,31 @@ chave_lados=[
             ]
 ```
 
-**num_animacao_h**
-**num_animacao_h=0**: Recebe um valor do tipo int, a quantidade de sprites na horizontal.
+**num_animacao_h**: Recebe um valor, int, que é o número de sprites na horizontal.
 
-**dimensao=None**: Recebe uma lista/tupla com a nova dimensão(largura e altura) do sprite.
+**dimensao=None**: Recebe uma lista/tupla com a nova dimensão(largura e altura) do spritesheet.
 
-### Explicando entradas de alguns parâmetros
+### *Explicando parâmetros*
 
-![Spritesheet com marcações](testes/imagens/sprite_adao_marcacao.png)
+![Spritesheet com marcações](tutoriais/imagens/adao_spritesheet_marcado.png)
 
 ***Esta imagem contém as marcações de 4 parâmetros***
 
-O **x** nos 3 primeiros sprites representa o parâmetro **p_img_x**, ou seja, onde inicia o sprite na horizontal.
+**p_img_x**: É a posição onde inicia o sprite na horizontal. Na imagem é possível ter uma ideia do que é p_img_x.
 
-**OBS.:** p_img_x não é o mesmo que o parâmetro x, enquanto x é a posição do sprite na janela p_img_x é a do sprite dentro do spritesheet.
+**p_img_y**: É onde inicia o sprite na vertical.
 
+**altura**: Altura do sprite dentro do spritesheet.
 
-O **y** nos 3 próximos sprites representa o parâmetro **p_img_y**, ou seja, onde inicia o sprite na vertical.
+**largura**: Largura do sprite dentro do spritesheet.
 
-p_img_y não é y, p_img_y é a posição y dentro do spritesheet enquanto y é a posição dentro da janela.
+**OBS.:** *p_img_x não é o mesmo que o parâmetro x, enquanto x é a posição do sprite na janela p_img_x é a do sprite dentro do spritesheet. Igualmente para p_img_y e y*
 
-Os parâmetros **largura** e **altura** são exatamente isso, a largura e altura do sprite.
+A classe <code>Avatar()</code> só tem suporte para manipulação de spritesheets <a href="https://github.com/PyLuuu/PLSprite/edit/main/README.md#benef%C3%ADcios">AHLV</a>. Para facilitar o uso de spritesheets diversos temos a classe <code>ConverteSpriteSheet()</code>, ela suporta spritesheets **AHLH**(disponível), **AVLH**(indisponível), **AVLV**(indisponível), em breve todos estarão disponiveis.
 
-Quando o sprite for exibido na janela a lógica é simples, ele pegará do parâmetro **p_img_x** até a **largura**, pegando assim a parte horizontal do sprite, e em seguida de **p_img_y** até a **altura**, pegando toda a parte vertical do sprite.
+***Agora vamos criar avatar***
 
-**animacao_h**: se a animação dos seus sprites estiverem na horizontal passe True para este parâmetro.
-
-**animacao_v**: se a animação dos seus sprites estiverem na vertical passe True para este parâmetro.
-
-O sprite com as marcações tem as animações na horizontal, enquanto os lados(costa, esquerda, frente, direita) estão na vertical. Nesse caso animação_h=True, porém a classe <code>Avatar()</code> tem como padrão manipular spritesheet **<a href="https://github.com/PyLuuu/PLSprite/edit/main/README.md#benef%C3%ADcios">AHLV</a>**(Animação na Horizontal e Lados na Vertical), mas caso seu spritesheet seja **<a href="https://github.com/PyLuuu/PLSprite/edit/main/README.md#benef%C3%ADcios">AHLH</a>**(Animação na Horizontal e Lados na Horizontal), você deve definir o parâmetro animacao_h=True.
-
-O parâmetro **lados**, independente dos lados do seu spritesheets estarem na horizontal ou vertical os valores da lista/tupla devem estar na seguinte ordem cima/costa, baixo/frente, esquerda e direita. Se os lados do seu spritesheet estiverem na vertical, **lados** deve ter os valores de **p_img_y** da spritesheet, mas se os lados do seu spritesheet estiverem na horizontal **lados** deve receber os valores de **p_img_x** de cada sprite dentro da spritesheet.
-
-***Agora vamos para a prática***
-
-**Exemplo de uso:**
+## **Criando um objeto avatar**
 ```Python
 pg.init() # Inicializando o Pygame
 largura = altura = 500 # dimensões da janela
