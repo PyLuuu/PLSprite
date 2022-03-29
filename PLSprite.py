@@ -6,27 +6,22 @@
   | |____/    \  /    | |      | |  | | | |  | |
   | |         / /     | |____  | |__| | | |__| |
   |_|        /_/      |______| \______/ \______/
-  Luís Henrique Alexandre dos S.
+  Luís Henrique Alexandre dos S  Seg, 28/03/2022
                       PyLuu of CnC(future Pit)
-                        𝘼𝙣𝙮𝙤𝙣𝙚 𝙘𝙖𝙣 𝙙𝙚𝙫𝙚𝙡𝙤𝙥!
                            Pyluucatnet@gmail.com
 └───────────────────────────────────────────────┘
 """
 
 import pygame
-from pygame.locals import *
-
 
 print('I\'m PLSprite. Welcome!')
-
 
 # Chaves de spritesheets
 AHLV = 0
 AHLH = 1
 AVLH = 10
 AVLV = 11
-
-# chaves de lados
+# Chaves de lados
 C_cima = 0
 C_baixo = 1
 C_esquerda = 10
@@ -75,7 +70,7 @@ class GerarSpriteSheet:
                                   (100, 100),
                                   True).gerar()
     
-    Estanciando a classe, lembre-se de utilizar o método gerar() para que ele retorne o spritesheet para o objeto meu_sprite
+    Instanciando a classe. Lembre-se de utilizar o método gerar() para que ele retorne o spritesheet para o objeto meu_sprite
     """
     def __init__(self, 
                  matriz_sprites, 
@@ -83,23 +78,21 @@ class GerarSpriteSheet:
                  espaco_horizontal, 
                  espaco_vertical, 
                  dimensao_sprite=None, 
-                 alfa=False,
-                 inverte_horizontal=None,
-                 inverte_vertical=None):
+                 alfa=False):
         """
            Inicializando objeto
            
            :matriz_sprites: Uma matriz com cada sprite
            				Exemplo:
-                                  [[img1, img2, img3],
-                                   [img4, img5, img6],
-                                   [img7, img8, img9]]
+                                [[img1, img2, img3],
+                                [img4, img5, img6],
+                                [img7, img8, img9]]
            				Contendo a imagem de todos os sprites que você deseja usar
-           :dimensao_spritesheet: Recebe uma lista/tupla com as dimensões(largura, altura) do sprite
+           :dimensao_spritesheet: Recebe uma lista/tupla com as dimensões(largura, altura) do spritesheet
            :espaco_horizontal: Espaçamento horizontal entre os sprites
            :espaco_vertical: Espaçamento vertical entre os sprites
            :dimensao_sprite: Recebe uma lista/tupla com a nova dimensão(largura, altura) do sprite
-           :alfa: Recebe um valor booleano. Se alfa == True os sprites tem o fundo com alfa
+           :alfa: Recebe um valor booleano. Se alfa == True os sprites tem fundo transparente
         """
         self.sprites = matriz_sprites
         self.dimensao = dimensao_spritesheet
@@ -134,24 +127,44 @@ class ConverteSpriteSheet:
                  chave_spritesheet,
                  d_sprite,
                  d_spritesheet=None,
-                 index_spritesheet_h=0,
-                 index_spritesheet_v=0,
                  alfa=True):
+        """
+        Inicializando objeto
+
+        :param spritesheet: Recebe o spritesheet que será convertido
+        :param num_animacao: Recebe um valor, int, da quantidade de animações do spritesheet
+        :param num_lados: Recebe um valor, int, da quantidade de lados do spritesheet
+        :param chave_spritesheet: Recebe uma chave de spritesheet
+                                  Exemplo: PLS.AHLV
+                                           PLS.AHLH
+                                           PLS.AVLH
+                                           PLS.AVLV
+                                  Chaves de spritesheet são os padrões de spritesheet
+                                  AHLV: Animação na Horizontal e Lados na Vertical
+                                  AHLH: Animação na Horizontal e Lados na Horizontal
+                                  AVLH: Animação na Vertical e Lados na Horizontal
+                                  AVLV: Animação na Vertical e Lados na Vertical
+        :param d_sprite: Recebe uma lista/tupla com a dimensão(largura, altura) do sprite
+        :param d_spritesheet: Parâmetro opcional. Recebe uma lista/tupla com a dimensão do spritesheet que será gerado
+        :param alfa: Parâmetro opcional. Recebe um valor, booleano, que define a transparência do fundo do spritesheet
+                     Obs.: Se nenhum valor for passado o padrão é True
+        """
         self.spritesheet = spritesheet
         self.num_animacao = num_animacao
         self.num_lados = num_lados
         self.chave = chave_spritesheet
         self.d_sprite = d_sprite
         self.d_spritesheet = d_spritesheet
-        self.index_h = index_spritesheet_h
-        self.index_v = index_spritesheet_v
         self.alfa = alfa
     
     def converter(self):
+        """
+        -> Método responsável pela conversão do spritesheet
+        :return: Retorna o spritesheet convertido
+        """
         if self.d_spritesheet:
             self.spritesheet = pygame.transform.scale(self.spritesheet, self.d_spritesheet)
         if self.chave == AHLH:
-            # gerando superficie onde ficará o novo spritesheet (AHLV)
             self.novo_spritesheet = pygame.Surface((self.d_sprite[0] * self.num_animacao, self.d_sprite[1] * self.num_lados))
             self.novo_spritesheet.fill((0, 255, 0))
             self.largura_janela = self.spritesheet.get_rect()[-2] // self.num_lados
@@ -164,12 +177,10 @@ class ConverteSpriteSheet:
                     self.janela.set_colorkey(alfa_janela)
                     alfa_novo_spritesheet = self.novo_spritesheet.get_at((0, 0))
                     self.novo_spritesheet.set_colorkey(alfa_novo_spritesheet)
-                self.janela.blit(self.spritesheet, (0, 0), (self.largura_janela * c, self.index_v * self.d_sprite[1], self.largura_janela, self.altura_janela))
+                self.janela.blit(self.spritesheet, (0, 0), (self.largura_janela * c, self.d_sprite[1], self.largura_janela, self.altura_janela))
                 self.novo_spritesheet.blit(self.janela, (0, self.altura_janela * c))
-        
         elif self.chave == AVLV:
             pass
-        
         elif self.chave == AVLH:
             pass
         return self.novo_spritesheet
@@ -188,12 +199,12 @@ class AnimaSprites:
                  x,
                  y,
                  num_animacao_h,
-                 dimensao_sprite=None):
+                 dimensao_spritesheet=None):
         """
         Inicializando objeto
         
         :tela: Recebe a superficie onde os sprites serão desenhados
-        :spritesheet: Recebe o spritesheet que trabalharemos
+        :spritesheet: Recebe o spritesheet que será usado para animar
         :teclas_controle: Recebe uma lista/tupla com as teclas de movimento do sprite
                         OBS.: As teclas devem ser passadas de acordo com a ordem do seu spritesheet
                         Exemplo:
@@ -205,8 +216,8 @@ class AnimaSprites:
         :p_img_y: Recebe um valor do tipo int para definir a posição y do sprite dentro do spritesheet
         :x: Recebe um valor do tipo int para definir a posição x do sprite na superficie definida
         :y: Recebe um valor do tipo int para definir a posição y do sprite na superficie definida
-        :num_animacao_h: Recebe um valor do tipo int, que é a quantidade de sprites na horizontal em uma mesma direção
-        :dimensao_sprite: Recebe uma lista/tupla com a nova largura e altura do sprite
+        :num_animacao_h: Recebe um valor do tipo int, que é a quantidade de sprites na horizontal
+        :dimensao_spritesheet: Recebe uma lista/tupla com a nova dimensão(largura, altura) do spritesheet
         """
         self.tela = tela
         self.spritesheet = spritesheet
@@ -218,7 +229,7 @@ class AnimaSprites:
         self.x = x
         self.y = y
         self.num_animacao_h = num_animacao_h
-        self.dimensao_sprite = dimensao_sprite
+        self.dimensao_spritesheet = dimensao_spritesheet
         self.atraso = 0
         self.velocidade_animacao = 0.1
         self.sprite_inicio = 0
@@ -226,16 +237,16 @@ class AnimaSprites:
         self.sprite_padrao_xy = (0, None)
     
     def iniciar(self):
-        """Método responsável por iniciar a manipulação do spritesheet"""
+        """Método responsável por construir o sprite"""
         janela_avatar = pygame.Surface((self.largura, self.altura))
-        if self.dimensao_sprite:
-            self.spritesheet = pygame.transform.scale(self.spritesheet, self.dimensao_sprite)
+        if self.dimensao_spritesheet:
+            self.spritesheet = pygame.transform.scale(self.spritesheet, self.dimensao_spritesheet)
         janela_avatar.blit(self.spritesheet, (0, 0), (self.p_img_x, self.p_img_y, self.largura, self.altura))
         self.tela.blit(janela_avatar, (self.x, self.y))
         self._controles()
     
     def _controles(self):
-        """Método responsável por controlar as animações do sprite"""
+        """Método responsável por controlar as animações do spritesheet"""
         keys = pygame.key.get_pressed()
         for i, key in enumerate(self.teclas_controle):
             if keys[key]:
@@ -245,7 +256,6 @@ class AnimaSprites:
             self.atraso += 1
             if self.atraso > self.velocidade_animacao * 20: # definindo a velocidade da animação
                 self.atraso = 0
-                # cada vez que a p_img_x mais a largura da janela for menor que a largura do spritesheet ele pula para o proximo sprite
                 if self.p_img_x + self.largura < self.num_animacao_h * self.largura:
                     self.p_img_x += self.largura
                 else:
@@ -260,28 +270,28 @@ class AnimaSprites:
     def set_sprite_inicio(self, num):
         """
         -> Método responsável por definir qual será o primeiro sprite após cada loop da animação
-           :num: Recebe um valor, do tipo int, que define o p_img_x do primeiro sprite a ser exibido após cada loop da animação
+           :num: Recebe um valor, int, que define o p_img_x do primeiro sprite a ser exibido após cada loop da animação
         """
         self.sprite_inicio = num
     
     def set_posx(self, pos_x):
         """
         -> Método responsável por definir a posição x do sprite
-           :pos_x: Recebe um valor, do tipo int, que será a nova posição x do sprite
+           :pos_x: Recebe um valor, int, que será a nova posição x do sprite
         """
         self.x = pos_x
     
     def set_posy(self, pos_y):
         """
         -> Método responsável por definir a posição y do sprite
-           :pos_y: Recebe um valor, do tipo int, que será a nova posição y do sprite
+           :pos_y: Recebe um valor, int, que será a nova posição y do sprite
         """
         self.y = pos_y
     
     def set_sprite_padrao_xy(self, pos_xy):
         """
-        -> Método responsável por definir a posição de repouso
-           :pos_xy: Recebe uma lista/tupla com dois valores, posição x e posição y, caso queira definir 
+        -> Método responsável por definir a posição padrão
+           :pos_xy: Recebe uma lista/tupla com dois valores, posição x e posição y. Caso queira definir
                     somente uma das posições use None para invalidar a posição que não irá definir
            Exemplo: .set_sprite_padrao_xy([x, None]) # x, y
         """
@@ -290,64 +300,62 @@ class AnimaSprites:
     def set_velocidade_animacao(self, num):
         """
         -> Método responsável por definir a velocidade da animação
-           :num: Recebe um valor, do tipo int, para definir a velocidade de transição da animação
+           :num: Recebe um valor, int, para definir a velocidade de transição da animação
         """
         self.velocidade_animacao = num
     
     def set_num_animacaoh(self, num):
         """
         -> Método responsável por definir a quatidade de sprites na horizontal
-           :num: Recebe um valor do tipo int para definir quantos sprites há na horizontal
+           :num: Recebe um valor, int, para definir quantos sprites há na horizontal
         """
         self.num_animacao_h = num
     
     def set_num_animacaov(self, num):
         """
         -> Método responsável por definir a quantidade de sprites na vertical
-           :num: Recebe um valor do tipo int para definir quantos sprites há na vertical
+           :num: Recebe um valor, int, para definir quantos sprites há na vertical
         """
         self.num_animacao_v = num
     
     def get_dimensao_sprite(self):
         """
-        -> Método responsável por retornar as dimensões do spritesheet em uso
-           :return: Retorna uma lista/tupla com a largura e altura do spritesheet em uso
+        -> Método responsável por retornar a dimensão do spritesheet em uso
+           :return: Retorna uma lista com a dimensão do spritesheet em uso
         """
-        return self.sprite.get_rect()[2:]
+        return self.spritesheet.get_rect()[2:]
     
     def get_posx(self):
         """
         -> Método responsável por retornar a posição x do sprite
-           :return: Retorna um valor do tipo int da posição x do sprite
+           :return: Retorna um valor, int, da posição x do sprite
         """
         return self.x
     
     def get_posy(self):
         """
         -> Método responsável por retornar a posição y do sprite
-           :return: Retorna um valor do tipo int da posição y do sprite
+           :return: Retorna um valor, int, da posição y do sprite
         """
         return self.y
     
     def get_velocidade_animacao(self):
         """
         -> Método responável por retornar a velocidade da animação
-           :return: Retorna a velocidade da animação
+           :return: Retorna um valor int, da velocidade da animação
         """
         return self.velocidade_animacao
     
     def get_num_animacaoh(self):
         """
         -> Método responsável por retornar o número de animações na horizontal
-           :return: Retorna a quantidade de sprites na horizontal
+           :return: Retorna a quantidade de animações na horizontal
         """
         return self.num_animacao_h
 
 
 class Avatar:
-    """
-    Classe para manipulação de spritesheets AHLV
-    """
+    """Classe para manipulação de spritesheets AHLV"""
     def __init__(self, tela,
                        spritesheet,
                        p_img_x,
@@ -358,24 +366,22 @@ class Avatar:
                        altura,
                        chave_lados,
                        num_animacao_h=0,
-                       num_animacao_v=0,
                        dimensao=None):
         """
         Inicializando objeto
         
         :tela: Recebe uma superficie onde o sprite será desenhado
-        :spritesheet: Recebe o sprite que vamos trabalhar
-        :p_img_x: Recebe um valor do tipo int para a posição x do sprite dentro do spritesheet
-        :p_img_y: Recebe um valor do tipo int para a posição y do sprite dentro do spritesheet
-        :x: Recebe um valor do tipo int para a posição x do sprite na superficie
-        :y: Recebe um valor do tipo int para a posição y do sprite na superficie
-        :largura: Recebe um valor do tipo int para a largura do sprite
-        :altura: Recebe um valor do tipo int para a altura do sprite
-        :chave_lados: Recebe uma lista/tupla com chaves de direção de lados
+        :spritesheet: Recebe o spritesheet que será usado
+        :p_img_x: Recebe um valor, int, para a posição x do sprite dentro do spritesheet
+        :p_img_y: Recebe um valor, int, para a posição y do sprite dentro do spritesheet
+        :x: Recebe um valor, int, para a posição x do sprite na superficie
+        :y: Recebe um valor, int, para a posição y do sprite na superficie
+        :largura: Recebe um valor, int, para definir a largura do sprite
+        :altura: Recebe um valor, int, para definir a altura do sprite
+        :chave_lados: Recebe uma lista/tupla com chaves de direção/lados
                       Exemplo: [PLS.C_cima, PLS.C_baixo, PLS.C_esquerda, PLS.C_direita]
-        :num_animacao_h: Recebe um valor do tipo int para definir a quantidade de animações na horizontal do spritesheet
-        :num_animacao_v: Recebe um valor do tipo int para definir a quantidade de animações na vertical do spritesheet
-        :dimensao: Recebe uma lista/tupla com a largura e altura do sprite
+        :num_animacao_h: Recebe um valor, int, para definir a quantidade de animações na horizontal do spritesheet
+        :dimensao: Recebe uma lista/tupla com a nova dimensão(largura, altura) do spritesheet
         """
         self.tela = tela
         self.spritesheet = spritesheet
@@ -387,9 +393,8 @@ class Avatar:
         self.altura = altura
         self.chave_lados = chave_lados
         self.num_lado = len(self.chave_lados)
-        self.num_animacao_h = num_animacao_h 
-        self.num_animacao_v = num_animacao_v
-        self.dimensao_sprite = dimensao
+        self.num_animacao_h = num_animacao_h
+        self.dimensao_spritesheet = dimensao
         self.movimento = 1
         self.velocidade = 1
         self.atraso_animacao = 0
@@ -400,10 +405,10 @@ class Avatar:
         self.cor_fundo_avatar = (0, 0, 0)
     
     def _iniciar_sprite(self):
-        """Método responsável por iniciar animação do spritesheet"""
+        """Método responsável por criar avatar"""
         if self.avatar_visivel:
-            if self.dimensao_sprite:
-                self.sprite = pygame.transform.scale(self.spritesheet, self.dimensao_sprite)
+            if self.dimensao_spritesheet:
+                self.sprite = pygame.transform.scale(self.spritesheet, self.dimensao_spritesheet)
             self.tela.blit(self.spritesheet, (self.x, self.y), (self.p_img_x, self.p_img_y, self.largura, self.altura))
         elif self.fundo_avatar:
             fundo_avatar = pygame.Surface((self.largura, self.altura))
@@ -411,10 +416,10 @@ class Avatar:
             self.tela.blit(fundo_avatar, (self.x, self.y))
     
     def atualizar(self):
-        """Método responsável por atualizar a animação do sprite"""
+        """Método responsável por atualizar a animação do avatar"""
         self._iniciar_sprite()
-        if self.dimensao_sprite:
-            self.spritesheet = pygame.transform.scale(self.spritesheet, self.dimensao_sprite)
+        if self.dimensao_spritesheet:
+            self.spritesheet = pygame.transform.scale(self.spritesheet, self.dimensao_spritesheet)
         rect_sprite = self.spritesheet.get_rect()
         if self.acao_andando: # se o sprite tiver em movimento ou definido para loop infinito
             if self.atraso_animacao > (20 * self.velocidade):
@@ -427,10 +432,10 @@ class Avatar:
     
     def controles(self, teclas, pasos=None):
         """
-        -> Método responsável por controlar o movimento do sprite
+        -> Método responsável por controlar o movimento do avatar
            :teclas: Recebe uma lista/tupla com as chaves de movimento
                     Exemplo: (pygame.K_w, pygame.K_s, pygame.K_a, pygame.K_d)
-           :pasos: Se pasos não for definido recebe None e a velocidade será padrão
+           :pasos: Parâmetro opcional. Senão for definido recebe None e a velocidade será padrão
         """
         if pasos:
             self.pasos = pasos
@@ -439,7 +444,7 @@ class Avatar:
         if self.teclas_movimento: # teclas de movimento personalizada
             for c in range(len(self.teclas_movimento)):
                 if tecla[self.teclas_movimento[c]]:
-                    if self.tipo_lado == AHLV:
+                    if self.chave_lados == AHLV:
                         self.p_img_y = self.altura * c
                         if self.chave_lados[c] == C_cima:
                             self.y -= self.pasos
@@ -459,75 +464,68 @@ class Avatar:
     def set_posx(self, pos_x):
         """
         -> Método responsável por definir a posição x do sprite
-           :pos_x: Recebe um valor do tipo int que define a posição x do sprite
+           :pos_x: Recebe um valor, int, que define a posição x do sprite
         """
         self.x = pos_x
     
     def set_posy(self, pos_y):
         """
         -> Método responsável por definir a posição y do sprite
-           :pos_y: Recebe um valor do tipo int que define a posição y do sprite
+           :pos_y: Recebe um valor, int, que define a posição y do sprite
         """
         self.y = pos_y
     
     def set_num_animacaoh(self, num_animacao):
         """
         -> Método responsável por definir o número de animações na horizontal
-           :num_animacao: Recebe um valor do tipo int que define quantos sprites há na horizontal
+           :num_animacao: Recebe um valor, int, que define quantos sprites há na horizontal
         """
         self.num_animacao_h = num_animacao
     
-    def set_num_animacaov(self, num_animacao):
-        """
-        -> Método responsável por definir o número de animações na vertical
-           :num_animacao: Recebe um valor do tipo int que define quantos sprites há na vertical
-        """
-        self.num_animacao_v = num_animacao
-    
-    def set_imgx(self, pos_x):
+    def set_imgh(self, index_x):
         """
         -> Método responsável por definir a posição X da imagem dentro do spritesheet
-           :pos_x: Recebe um valor int para definir a posição x do sprite
+           :index_x: Recebe um valor, int, do index horizontal do sprite dentro do spritesheet
         """
-        self.p_img_x = pos_x * self.largura
+        self.p_img_x = index_x * self.largura
     
-    def set_imgy(self, pos_y):
+    def set_imgv(self, index_y):
         """
-        -> Método responsável por definir a posição Y da imagem dentro do spritesheet
-           :pos_y: Recebe um valor int para definir a posição y do sprite
+        -> Método responsável por definir a posição Y da sprite dentro do spritesheet
+           :index_y: Recebe um valor, int, do index vertical do sprite dentro do spritesheet
         """
-        self.p_img_y = pos_y * self.altura
+        self.p_img_y = index_y * self.altura
     
     def set_janelah(self, largura):
         """
-        -> Método responsável por definir o comprimento da janela do sprite na horizontal
-           :largura: Recebe um valor do tipo int que define a largura da janela
+        -> Método responsável por definir a largura da janela do sprite
+           :largura: Recebe um valor, int, que define a largura da janela
         """
         self.largura = largura
     
     def set_janelav(self, altura):
         """
-        -> Método responsável por definir o comprimento da janela do sprite na vertical
-           :altura: Recebe um valor do tipo int que define a altura da janela
+        -> Método responsável por definir a altura da janela do sprite
+           :altura: Recebe um valor, int, que define a altura da janela
         """
         self.altura = altura
     
     def set_dimensao_sprite(self, l_a):
         """
-        -> Método responsável por definir nova dimensão do sprite
-           :l_a: Recebe uma lista/tupla com a nova dimensão do sprite
+        -> Método responsável por definir nova dimensão do spritesheet
+           :l_a: Recebe uma lista/tupla com a nova dimensão(largura, altura) do spritesheet
         """
-        self.dimensao_sprite = l_a
+        self.dimensao_spritesheet = l_a
     
     def set_avatar_visivel(self, visivel, fundo_avatar=False, cor_fundo=(0, 0, 0)):
         """
-        -> Método responsável por definir se o avatar ficará visível
+        -> Método responsável por definir estado do avatar
            :visivel: Recebe um valor booleano
                      True visível
                      False invisível
-           :fundo_avatar: Recebe um valor booleano. Se True, ficará uma quadrado no local do sprite
-           :cor_fundo: Recebe uma lista/tupla com 3 valores para RGB
-                       Se fundo_avatar não for definido a cor padrão é preto
+           :fundo_avatar: Parâmetro opcional. Recebe um valor booleano. Se True, ficará um quadrado no local do avatar
+           :cor_fundo: Parâmetro opcional. Recebe uma lista/tupla com 3 valores para RGB
+                       Senão for passado recebe (0, 0, 0), preto, como padrão
         """
         if visivel:
             self.avatar_visivel = True
@@ -556,7 +554,7 @@ class Avatar:
     def set_teclas(self, teclas):
         """
         -> Método responsável por definir teclas de movimento
-           :teclas: Passe uma lista/tupla com os botões de controle na seguinte ordem:
+           :teclas: Passe uma lista/tupla com as teclas de controle na seguinte ordem:
                   Para cima     exemplo: pygame.K_w
                   Para baixo    exemplo: pygame.K_s
                   Para esquerda exemplo: pygame.K_a
@@ -567,28 +565,28 @@ class Avatar:
     def set_pasos(self, pasos):
         """
         -> Método responsável por definir a velocidade de pasos do avatar
-           :pasos: Recebe um valor int que define a velocidade do movimento do sprite
+           :pasos: Recebe um valor, int, que define a velocidade do movimento do avatar
         """
         self.pasos = pasos
     
-    def get_sprite_atual(self):
-        """Método responsável por retornar o index do sprite atual"""
+    def get_sprite_atualh(self):
+        """Método responsável por retornar o index do sprite atual na horizontal"""
         return self.movimento // self.largura
     
     def get_posx(self):
-        """Método responsável por retornar a posição x do sprite"""
+        """Método responsável por retornar a posição x do avatar na superficie"""
         return self.x
     
     def get_posy(self):
-        """Método respionsável por retornar a posição y do sprite"""
+        """Método respionsável por retornar a posição y do avatar na superficie"""
         return self.y
     
     def get_avatar_visivel(self):
         """
-        -> Método responsável por retornar o estado do sprite
+        -> Método responsável por retornar o estado do avatar
            :return: Retorna o estado do sprite
-                               True se for visível
-                               False se for invísivel
+                    True se for visível
+                    False se for invisível
         """
         return self.avatar_visivel
     
@@ -617,28 +615,16 @@ class Avatar:
         return self.altura
     
     def get_num_animacaoh(self):
-        """
-        -> Método responsável por retornar o número de animações na horizontal
-           OBS.: Se as animações do sprite estiverem na vertical este método retornará 0
-        """
+        """-> Método responsável por retornar o número de animações na horizontal"""
         return self.num_animacao_h
     
-    def get_num_animacaov(self):
-        """
-        -> Método responsável por retornar o número de animações na vertical
-           OBS.: Se as animações do sprite estiverem na horizontal este método retornará 0
-        """
-        return self.num_animacao_v
-    
-    def get_dimensao_sprite(self):
-        """Método responsável por retornar uma tupla com a dimensão(largura e altura) do sprite"""
-        if self.dimensao_sprite:
-            return self.dimensao_sprite
+    def get_dimensao_spritesheet(self):
+        """Método responsável por retornar uma lista com a dimensão(largura, altura) do spritesheet"""
         return self.spritesheet.get_rect()[-2:]
         
     def get_acao(self):
         """
-        -> Método responsável por retornar o estado do sprite
+        -> Método responsável por retornar o estado do avatar
            :return: Retorna um valor booleano.
                     True se estiver em movimento
                     False se estiver parado
