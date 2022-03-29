@@ -59,17 +59,16 @@ Está classe só aceita spritesheets <code>AHLV</code>
 import PLSprite as PLS
 import pygame as pg
 ```
-*Importar a biblioteca Pygame e o nosso projeto, PLSprite, para que possamos começar a trabalhar.*
 
-*Após a importação da biblioteca Pygame e do nosso projeto vamos construir um avatar*
+*Importar a biblioteca Pygame e o nosso projeto, PLSprite, para que possamos começar a trabalhar. Agora vamos construir um avatar.*
 
-#### Antes de tudo
+### Antes de tudo
 
 Parâmetros da Classe <code>Avatar()</code>
 
-**tela**: Você deve passar a janela onde seus sprites serão desenhados.
+**tela**: Você deve passar a superficie onde seus sprites serão desenhados.
 
-**sprite**: Você deve passar o spritesheet que irá trabalhar.
+**spritesheet**: Você deve passar o spritesheet que irá trabalhar.
 
 **p_img_x**: p_img_x(personagem imagem x). A posição x do meu sprite dentro do spritesheet.
 
