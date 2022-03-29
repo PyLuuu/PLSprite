@@ -365,7 +365,7 @@ class Avatar:
                        largura,
                        altura,
                        chave_lados,
-                       num_animacao_h=0,
+                       num_animacao_h,
                        dimensao=None):
         """
         Inicializando objeto

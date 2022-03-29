@@ -68,29 +68,34 @@ Parâmetros da Classe <code>Avatar()</code>
 
 **tela**: Você deve passar a superficie onde seus sprites serão desenhados.
 
-**spritesheet**: Você deve passar o spritesheet que irá trabalhar.
+**spritesheet**: Você deve passar o spritesheet que deseja.
 
-**p_img_x**: p_img_x(personagem imagem x). A posição x do meu sprite dentro do spritesheet.
+**p_img_x**: p_img_x(personagem imagem x). A posição x do sprite dentro do spritesheet.
 
-**p_img_y**: p_img_y(personagem imagem y). A posição y do meu sprite dentro do spritesheet.
+**p_img_y**: p_img_y(personagem imagem y). A posição y do sprite dentro do spritesheet.
 
-**x**: Recebe um valor do tipo int, a posição x do sprite.
+**x**: Recebe um valor, int, para definir a posição x do sprite.
 
-**y**: Recebe um valor do tipo int, a posição y do sprite.
+**y**: Recebe um valor, int, para definir a posição y do sprite.
 
-**largura**: Largura do sprite, um valor do tipo int.
+**largura**: Recebe um valor, int, que define a largura do sprite.
 
-**altura**: Altura do sprite, um valor do tipo int.
+**altura**: Recebe um valor, int, que define a altura do sprite.
 
-**lados**: Uma lista/tupla com os lados do seu sprite.
+**chave_lados**: Uma lista/tupla com as chaves de direção/lados.
 
-**animacao_h=False**: Recebe um valor booleano. Se este parâmetro não for passado o padrão é False.
+**Exemplo:**
+```Python
+chave_lados=[
+            PLS.C_cima,
+            PLS.C_baixo,
+            PLS.C_esquerda, 
+            PLS.C_direita
+            ]
+```
 
-**animacao_v=False**: Recebe um valor booleano. Se este parâmetro não for passado o padrão é False.
-
+**num_animacao_h**
 **num_animacao_h=0**: Recebe um valor do tipo int, a quantidade de sprites na horizontal.
-
-**num_animacao_v=0**: Recebe um valor do tipo int, a quantidade de sprites na vertical.
 
 **dimensao=None**: Recebe uma lista/tupla com a nova dimensão(largura e altura) do sprite.
 
