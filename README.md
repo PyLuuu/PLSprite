@@ -1,29 +1,28 @@
-# ***Aviso!!!*** 20/03/2022
-### ***Observamos diversos erros no nosso projeto. Em breve disponibilizaremos uma versão com todos os erros corrigidos. Obrigado pela atenção.***
-
-
-# PLSprite
+# **PLSprite**
 
 <img alt="Github License" src="https://img.shields.io/github/license/pyluuu/PLSprite" /> <img alt="GitHub Top Language" src="https://img.shields.io/github/languages/top/Pyluuu/PLSprite" /> <img alt="GitHub Language Count" src="https://img.shields.io/github/languages/count/Pyluuu/PLSprite" /> <img alt="File size" src="https://img.shields.io/github/repo-size/Pyluuu/PLSprite" />
 
 Este projeto foi desenvolvido com propósito de facilitar a manipulação
-de spritesheets para games 2D com uso da biblioteca Pygame
+de spritesheets para games 2D com uso da biblioteca Pygame.
 
-### Instalação
+## **Instalação**
 <code>pip install PLSprite</code> (não disponível, dia 07/03/2022)
 
-Para que consiga fazer uso do nosso projeto você precisará apenas instalar a biblioteca Pygame. Para isso você pode usar o <code>pip</code>, ou algum instalador da sua preferência, com a seguinte linha de comando: <code>pip install pygame</code>.
+Para que consiga fazer uso do nosso projeto você precisará apenas instalar a biblioteca Pygame. Para isso, você pode usar o <code>pip</code>, ou algum instalador da sua preferência, com a seguinte linha de comando: <code>pip install pygame</code>.
 
-### Como melhorar
-Para que você possa adicionar melhorias ao projeto e queira desenvolver novas funcionalidades, você pode clonar o repositório com a seguinte linha de comando: <code>git clone https://github.com/Pyluuu/PLSprite</code>, use este comando dentro do diretório que deseja clonar o repositório.
+## **Como melhorar**
+Para que você possa adicionar melhorias ao projeto e queira desenvolver novas funcionalidades, você pode clonar o repositório com a seguinte linha de comando: <code>git clone https://github.com/Pyluu/PLSprite</code>, use este comando dentro da pasta onde deseja clonar o repositório.
 
-### Benefícios
-O nosso projeto tem como base ajudar a facilitar a maniuplação de spritesheets disponibilizando
-diversas ferramentas de manipulação para os usuários.
+## **Benefícios**
+O nosso projeto tem como base ajudar a facilitar a maniuplação de spritesheets disponibilizando ferramentas de conversão, criação, inversão de sprites entre outras funcionalidades de manipulação para spritesheet.
 
-Como a classe <code>Avatar()</code>, que é responsável por tratar de spritesheets <code>AHLH</code>
+## **Forma de usar**
 
-***Atributos PLSprite:***
+Classe <code>Avatar()</code>, ela é responsável por criar um avatar com o spritesheet desejado.
+
+Está classe só aceita spritesheets <code>AHLV</code>
+
+***Chaves de spritesheets***
 
 <code>AHLV</code>: Animação na Horizontal e Lados na Vertical</del>
 
@@ -35,29 +34,33 @@ Como a classe <code>Avatar()</code>, que é responsável por tratar de spriteshe
 
 **Exemplo de spritesheet** <code>AHLV</code>:
 
-![Imagem AHLV](testes/imagens/adao_andando.png)
+![Imagem AHLV](tutoriais/imagens/adao_spritesheet.png)
 
 
 **Exemplo de spritesheet** <code>AHLH</code>:
 
-![Imagem AHLH](testes/imagens/primo_mario_andando.png)
+![Imagem AHLH](tutoriais/imagens/primo_mario_spritesheet.png)
 
 
 **Exemplo de spritesheet** <code>AVLH</code>:
 
-![Imagem AVLH](testes/imagens/nora_andando.png)
+![Imagem AVLH](tutoriais/imagens/nora_spritesheet.png)
 
 
-**Exemplo de spritesheet** <code>AVLV</code>: (não disponível ainda)
+**Exemplo de spritesheet** <code>AVLV</code>
 
-## Como usar
+![Imagem AVLV](tutoriais/imagens/nora_spritesheet_AVLV.png)
 
-### Importação
+
+## **Como usar**
+
+### ***Importação***
 ```Python
 import PLSprite as PLS
 import pygame as pg
 ```
 *Importar a biblioteca Pygame e o nosso projeto, PLSprite, para que possamos começar a trabalhar.*
+
 *Após a importação da biblioteca Pygame e do nosso projeto vamos construir um avatar*
 
 #### Antes de tudo
