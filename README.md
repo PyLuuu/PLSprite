@@ -94,7 +94,7 @@ chave_lados=[
             ]
 ```
 
-**num_animacao_h**: Recebe um valor, int, que é o número de sprites na horizontal.
+**num_animacao_h**: Recebe um valor, int, que é o número de animações na horizontal.
 
 **dimensao=None**: Recebe uma lista/tupla com a nova dimensão(largura e altura) do spritesheet.
 
@@ -112,53 +112,50 @@ chave_lados=[
 
 **largura**: Largura do sprite dentro do spritesheet.
 
-**OBS.:** *p_img_x não é o mesmo que o parâmetro x, enquanto x é a posição do sprite na janela p_img_x é a do sprite dentro do spritesheet. Igualmente para p_img_y e y*
+**OBS.:** *p_img_x não é o mesmo que o parâmetro x, enquanto x é a posição do sprite na janela p_img_x é a posição do sprite dentro do spritesheet. Igualmente para p_img_y e y*
 
-A classe <code>Avatar()</code> só tem suporte para manipulação de spritesheets <a href="https://github.com/PyLuuu/PLSprite/edit/main/README.md#benef%C3%ADcios">AHLV</a>. Para facilitar o uso de spritesheets diversos temos a classe <code>ConverteSpriteSheet()</code>, ela suporta spritesheets **AHLH**(disponível), **AVLH**(indisponível), **AVLV**(indisponível), em breve todos estarão disponiveis.
-
-***Agora vamos criar avatar***
+A classe <code>Avatar()</code> tem suporte apenas para manipulação de spritesheets <code>AHLV</code>. Para facilitar o uso de spritesheets diversos temos a classe <code>ConverteSpriteSheet()</code>, ela converte spritesheets **AHLH**(disponível), **AVLH**(indisponível), **AVLV**(indisponível) em spritesheet **AHLV**, em breve todos estarão disponiveis.
 
 ## **Criando um avatar**
 ```Python
-pg.init() # Inicializando o Pygame
-largura = altura = 500 # dimensões da janela
-janela = pg.display.set_mode((largura, altura)) # criando janela
-adao_spritesheet = pg.image.load('imagens/adao_andando.png') # pegando a imagem do meu spritesheet
-run = True # estado do programa
+pg.init()
+l, a = (500, 500) # largura, altura
+pg.display.set_caption('Criando Avatar') # nomeando janela
+tela = pg.display.set_mode((l, a)) # criando janela
+run = True
 
-# criando objeto
-adao = PLS.Avatar(janela,
-              adao_spritesheet,
-              0,
-              130,
-              largura//2,
-              altura//2,
-              60,
-              60,
-              (0, 130, 65, 190),
-              animacao_h=True,
-              num_animacao_h=9)
+adao_spritesheet = pg.image.load('imagens/adao_spritesheet.png')
+
+# Instanciando a classe
+adao = PLS.Avatar(
+    tela=tela,
+    spritesheet=adao_spritesheet,
+    p_img_x=0,
+    p_img_y=0,
+    x=l//2,
+    y=a//2,
+    largura=60,
+    altura=60,
+    chave_lados=PLS.C_lados,
+    num_animacao_h=9)
 
 while run:
-    for event in pg.event.get(): # verificando lista de eventos do Pygame
-        if event.type == pg.QUIT: # ao clicar para fechar a janela o event.type sera QUIT
-            run = False # estado do programa recebe False
-  
-    janela.fill((0, 0, 0)) # após cada loop preenche a janela com a cor RGB: (0, 0, 0), ou seja, preto
-    adao.atualizar() # fará com que o seu sprite seja desenhado na janela
-  
-    pg.display.flip() # após cada loop atualiza a janela
+    for event in pg.event.get():
+        if event.type == pg.QUIT:
+            run = False
+    tela.fill((10, 20, 30))
 
+    adao.atualizar() # método atualizar() atualiza a animação do sprite
+
+    pg.display.flip()
 ```
-*Isso fará com que seu sprite seja exibido no centro da janela*
+*Isso fará com que o avatar seja exibido no centro da janela*
 
-OBS.: Este exemplo de código está <a href="https://github.com/PyLuuu/PLSprite/blob/main/testes/construindo_avatar.py">aqui</a>, outros tutoriais de como usar cada tipo de spritesheets estão na pasta <code><a href="testes">testes</a></code>.
-
-*Vá até o diretório de <code>testes</code>isso o ajudará a entender na prática como funciona nosso projeto.*
+**OBS**.: *Este exemplo de código está <a href="https://github.com/PyLuuu/PLSprite/blob/main/tutoriais/construindo_avatar.py">aqui</a>, outros tutoriais de como usar as classes PLS estão nos <code><a href="tutoriais">tutoriais</a></code>.*
 
 # Para contribuidores
 Todos são muito bem-vindos(as)! Caso tenham ideias de como melhorar este projeto se manifeste 
-e nos ajude a evoluir, peço que sejam criativos. Caso encontre bugs não se incomode em resolve-los, 
+e nos ajude a evoluir, peço que sejam criativos. Eu sei que é um projeto pequeno, mas acredito que possa se tornar uma ferramenta útil para criadores de jogos 2D. Caso encontre bugs ou erros não se incomode em resolve-los, 
 e ajude este pequeno projeto a se tornar uma ferramenta útil para desenvolvedores de jogos 2D.
 
 # Links
@@ -192,9 +189,7 @@ SOFTWARE.
 - **PyLuu**
 
 ### Contatos
-- Pyluucatnet@gmail.com
+- contatopyluu@gmail.com
 
 
-**OBS.**: Este é meu primeiro README.md. Peço desculpa desde já caso não tenha ficado muito 
-claro a explicação dos parâmetros para construir um avatar. Para melhor compreenção peço 
-que leia as docstrings do nosso projeto. Obrigado por usar nosso projeto.
+**OBS.**: *Este é meu primeiro README.md e meu primeiro projeto no GitHub. Peço desculpa desde já caso eu não tenha conseguido passar o recado de uma forma clara e objetiva e também por bugs no código, tentarei evoluir e adicionar mais funcionalidades e corrigir bugs que forem encontrados. Caso tenha dúvidas a respeito de como usar classes, métodos e funções leia as docstrings do nosso projeto. Obrigado por usar PLSprite.*
