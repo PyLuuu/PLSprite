@@ -11,7 +11,7 @@ pygame.display.set_caption('Conversão de sprite AHLH')
 run = True
 
 # spritesheet AHLH com varios spritesheets
-spritesheet_primo_mario = pygame.image.load('tutoriais/imagens/primo_mario_spritesheet.png')
+spritesheet_primo_mario = pygame.image.load('imagens/primo_mario_spritesheet.png')
 
 # convertendo spritesheet AHLH para AHLV
 spritesheet_primo_mario1 = ConverteSpriteSheet(
