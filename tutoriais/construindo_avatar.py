@@ -2,7 +2,7 @@ import PLSprite as PLS
 import pygame as pg
 
 pg.init()
-l, a = (500, 500) # largura, altura
+l, a = (500, 500) # dimensoes da janela
 pg.display.set_caption('Criando Avatar') # nomeando janela
 tela = pg.display.set_mode((l, a)) # criando janela
 run = True
