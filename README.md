@@ -118,7 +118,7 @@ A classe <code>Avatar()</code> só tem suporte para manipulação de spritesheet
 
 ***Agora vamos criar avatar***
 
-## **Criando um objeto avatar**
+## **Criando um avatar**
 ```Python
 pg.init() # Inicializando o Pygame
 largura = altura = 500 # dimensões da janela
