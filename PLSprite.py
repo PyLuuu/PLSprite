@@ -6,7 +6,7 @@
   | |____/    \  /    | |      | |  | | | |  | |
   | |         / /     | |____  | |__| | | |__| |
   |_|        /_/      |______| \______/ \______/
-  Luís Henrique Alexandre dos S  Seg, 28/03/2022
+  Luís H.A.S.         Seg, 28/03/2022
                       PyLuu of CnC(future Pit)
                            Pyluucatnet@gmail.com
 └───────────────────────────────────────────────┘
