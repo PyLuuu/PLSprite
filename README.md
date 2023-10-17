@@ -7,7 +7,8 @@ de spritesheets para games 2D com uso da biblioteca Pygame.
 
 ## **Instalação**
 <code>pip install PLSprite</code> (não disponível, dia 07/03/2022) 
-# **Sem PC, sem desenvolvimento, sem nada. Bye.**
+
+<!-- # **Sem PC, sem desenvolvimento, sem nada. Bye.** -->
 
 Para que consiga fazer uso do nosso projeto você precisará apenas instalar a biblioteca Pygame. Para isso, você pode usar o <code>pip</code>, ou algum instalador da sua preferência, com a seguinte linha de comando: <code>pip install pygame</code>.
 
