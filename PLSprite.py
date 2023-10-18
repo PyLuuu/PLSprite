@@ -29,22 +29,20 @@ C_direita = 11
 C_lados = (C_cima, C_baixo, C_esquerda, C_direita)
 
 
-def inverteh(sprites):
-    """
-       >>> Função responsável por inverter sprites na horizontal
-             :sprites: Recebe uma lista/tupla com os sprites a serem invertidos na horizontal
-             :return: Retorna uma lista dos sprites invertidos na horizontal
-    """
-    return [pygame.transform.flip(sprite, True, False) for sprite in sprites]
-
-
-def invertev(sprites):
-    """
-       >>> Função responsável por inverter sprites na vertical
-             :sprites: Recebe uma lista/tupla com os sprites a serem invertidos na vertical
-             :return: Retorna uma lista dos sprites invertidos na vertical
-    """
-    return [pygame.transform.flip(sprite, False, True) for sprite in sprites]
+class SpriteModifier:
+    def __init__(self, *args):
+        self.sprites = [sprite for sprite in args]
+    
+    def flipsprite(self, orientation_xy: tuple[bool, bool] = (False, False)):
+        list_sprites = list()
+        # Invertendo a orientação dos sprites
+        for sprite in self.sprites:
+            list_sprites.append(
+                pygame.transform.flip(surface=sprite,
+                                      flip_x=orientation_xy[0],
+                                      flip_y=orientation_xy[1])
+            )
+        return list_sprites
 
 
 class GerarSpriteSheet:
@@ -634,3 +632,8 @@ class Avatar:
     def get_pasos(self):
         """Método responsável por retornar o valor atual de pasos"""
         return self.pasos
+
+
+if __name__ == '__main__':
+    sprite = SpriteModifier()
+    sprite.flipsprite((True, False))
