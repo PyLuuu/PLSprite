@@ -30,19 +30,34 @@ C_lados = (C_cima, C_baixo, C_esquerda, C_direita)
 
 
 class SpriteModifier:
-    def __init__(self, *args):
-        self.sprites = [sprite for sprite in args]
+    def __init__(self, *args: pygame.SurfaceType):
+        self.sprites = args
     
     def flipsprite(self, orientation_xy: tuple[bool, bool] = (False, False)):
         list_sprites = list()
         # Invertendo a orientação dos sprites
-        for sprite in self.sprites:
+        for s in self.sprites:
             list_sprites.append(
-                pygame.transform.flip(surface=sprite,
+                pygame.transform.flip(surface=s,
                                       flip_x=orientation_xy[0],
-                                      flip_y=orientation_xy[1])
-            )
+                                      flip_y=orientation_xy[1]))
         return list_sprites
+
+    def spritescale(self, size: float | tuple[float, float]):
+        new_list_sprite = list()
+
+        if isinstance(size, float) or isinstance(size, int):
+            size = (size, size)
+
+        for sprite in self.sprites:
+            new_list_sprite.append(pygame.transform.scale(sprite, size))
+
+        return new_list_sprite
+
+    @staticmethod
+    def savesprite(sprites):
+        for i, sprite in enumerate(sprites):
+            pygame.image.save(sprite, f'Nova_foto_{i + 1}.png')
 
 
 class GerarSpriteSheet:
@@ -635,5 +650,38 @@ class Avatar:
 
 
 if __name__ == '__main__':
-    sprite = SpriteModifier()
-    sprite.flipsprite((True, False))
+    from time import sleep
+
+    LARGURA = 500
+    ALTURA = 500
+    BACKGROUND = (10, 50, 70)
+    run = True
+    pygame.init()
+    tela = pygame.display.set_mode((LARGURA, ALTURA))
+    pygame.display.set_caption('PLS')
+
+    s1 = pygame.image.load(f'imgs/Adany 1.png')
+    s2 = pygame.image.load(f'imgs/Adany 2.png')
+    s3 = pygame.image.load(f'imgs/Adany 3.png')
+    s4 = pygame.image.load(f'imgs/Adany 4.png')
+
+    sprite = SpriteModifier(s1, s2, s3, s4)
+    # new_sprites = sprite.flipsprite((True, False))
+    new_sprites = sprite.spritescale(300)
+    SpriteModifier.savesprite(sprites=new_sprites)
+
+    index = 0
+    while run:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                run = False
+        tela.fill(BACKGROUND)
+
+        tela.blit(new_sprites[index], (LARGURA // 2, ALTURA // 2))
+        if index < 3:
+            index += 1
+        else:
+            index = 0
+        sleep(.5)
+
+        pygame.display.flip()
