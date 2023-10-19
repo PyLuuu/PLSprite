@@ -29,22 +29,35 @@ C_direita = 11
 C_lados = (C_cima, C_baixo, C_esquerda, C_direita)
 
 
-def inverteh(sprites):
-    """
-       >>> Função responsável por inverter sprites na horizontal
-             :sprites: Recebe uma lista/tupla com os sprites a serem invertidos na horizontal
-             :return: Retorna uma lista dos sprites invertidos na horizontal
-    """
-    return [pygame.transform.flip(sprite, True, False) for sprite in sprites]
+class SpriteModifier:
+    def __init__(self, *args: pygame.SurfaceType):
+        self.sprites = args
+    
+    def flipsprite(self, orientation_xy: tuple[bool, bool] = (False, False)):
+        list_sprites = list()
+        # Invertendo a orientação dos sprites
+        for s in self.sprites:
+            list_sprites.append(
+                pygame.transform.flip(surface=s,
+                                      flip_x=orientation_xy[0],
+                                      flip_y=orientation_xy[1]))
+        return list_sprites
 
+    def spritescale(self, size: float | tuple[float, float]):
+        new_list_sprite = list()
 
-def invertev(sprites):
-    """
-       >>> Função responsável por inverter sprites na vertical
-             :sprites: Recebe uma lista/tupla com os sprites a serem invertidos na vertical
-             :return: Retorna uma lista dos sprites invertidos na vertical
-    """
-    return [pygame.transform.flip(sprite, False, True) for sprite in sprites]
+        if isinstance(size, float) or isinstance(size, int):
+            size = (size, size)
+
+        for sprite in self.sprites:
+            new_list_sprite.append(pygame.transform.scale(sprite, size))
+
+        return new_list_sprite
+
+    @staticmethod
+    def savesprite(sprites):
+        for i, sprite in enumerate(sprites):
+            pygame.image.save(sprite, f'Nova_foto_{i + 1}.png')
 
 
 class GerarSpriteSheet:
@@ -634,3 +647,41 @@ class Avatar:
     def get_pasos(self):
         """Método responsável por retornar o valor atual de pasos"""
         return self.pasos
+
+
+if __name__ == '__main__':
+    from time import sleep
+
+    LARGURA = 500
+    ALTURA = 500
+    BACKGROUND = (10, 50, 70)
+    run = True
+    pygame.init()
+    tela = pygame.display.set_mode((LARGURA, ALTURA))
+    pygame.display.set_caption('PLS')
+
+    s1 = pygame.image.load(f'imgs/Adany 1.png')
+    s2 = pygame.image.load(f'imgs/Adany 2.png')
+    s3 = pygame.image.load(f'imgs/Adany 3.png')
+    s4 = pygame.image.load(f'imgs/Adany 4.png')
+
+    sprite = SpriteModifier(s1, s2, s3, s4)
+    # new_sprites = sprite.flipsprite((True, False))
+    new_sprites = sprite.spritescale(300)
+    SpriteModifier.savesprite(sprites=new_sprites)
+
+    index = 0
+    while run:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                run = False
+        tela.fill(BACKGROUND)
+
+        tela.blit(new_sprites[index], (LARGURA // 2, ALTURA // 2))
+        if index < 3:
+            index += 1
+        else:
+            index = 0
+        sleep(.5)
+
+        pygame.display.flip()
